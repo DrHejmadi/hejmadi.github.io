@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Hansen's New Practice - Michael Skov Hejmadi</title>
+    <meta name="description" content="The sequel to the popular Doctor Hansen book. Explores how AI and digitalization can relieve administrative burdens and create more time for patients.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html">
+    <link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html">
+    <link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Doctor Hansen's New Practice">
+    <meta property="og:description" content="The sequel to the Doctor Hansen book by Andreas Pihl and Michael Skov Hejmadi.">
+    <meta property="og:image" content="https://hejmadi.com/images/doktor-hansen-2.webp">
+    <meta property="og:url" content="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html">
+    <meta property="og:type" content="book">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Doctor Hansen's New Practice">
+    <meta name="twitter:image" content="https://hejmadi.com/images/doktor-hansen-2.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Doctor Hansen's New Practice",
+      "author": [{ "@type": "Person", "name": "Andreas Pihl", "url": "https://www.andreaspihl.dk/" }, { "@id": "https://hejmadi.com/#person" }],
+      "url": "https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html",
+      "image": "https://hejmadi.com/images/doktor-hansen-2.webp",
+      "inLanguage": "en",
+      "datePublished": "2024",
+      "publisher": { "@type": "Organization", "name": "Grønningen 1" }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FDFBF7;
+            --color-bg-alt: #F5F1E8;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #2D5A4A;
+            --color-accent-light: #3D7A64;
+            --color-warm: #C4A77D;
+            --color-border: rgba(26, 26, 26, 0.1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Back Bar ── */
+        .back-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-bar a:hover {
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .back-link span {
+            font-size: 1.1rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .lang-switcher span {
+            cursor: default;
+        }
+
+        .lang-switcher .lang-inactive {
+            opacity: 0.45;
+            transition: opacity 0.2s ease;
+        }
+
+        .lang-switcher .lang-inactive:hover {
+            opacity: 0.7;
+        }
+
+        .lang-divider {
+            opacity: 0.4;
+            font-size: 0.85rem;
+            user-select: none;
+        }
+
+        /* ── Hero Section ── */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 4rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: linear-gradient(135deg, #4A6FA5 0%, #6B8FC7 100%);
+            border-radius: 6px;
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.12),
+                0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .book-cover-title {
+            font-family: 'Fraunces', serif;
+            color: #fff;
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .book-cover-authors {
+            color: rgba(255, 255, 255, 0.8);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Book Details ── */
+        .book-details {
+            padding-top: 0.5rem;
+        }
+
+        .book-title {
+            font-family: 'Fraunces', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .book-authors {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.9rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        .badge-publisher {
+            background: var(--color-bg-alt);
+            color: var(--color-text-muted);
+            border: 1px solid var(--color-border);
+        }
+
+        .badge-pensum {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
+        .book-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 560px;
+        }
+
+        .buy-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .buy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.7rem 1.4rem;
+            background: var(--color-accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .buy-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+        }
+
+        .buy-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ── Reviews Section ── */
+        .reviews-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .reviews-heading {
+            font-family: 'Fraunces', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .review-card {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 6px 6px 0;
+            padding: 1.5rem 1.75rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .review-stars {
+            color: var(--color-warm);
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+        }
+
+        .review-quote {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--color-text);
+            margin-bottom: 0.85rem;
+        }
+
+        .review-source {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .review-source a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .review-source a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .back-bar {
+                padding: 0.65rem 1.25rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2.5rem 1.25rem 3rem;
+            }
+
+            .book-cover {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
+            .book-title {
+                font-size: 1.8rem;
+            }
+
+            .book-authors {
+                font-size: 1.05rem;
+            }
+
+            .book-description {
+                font-size: 1rem;
+            }
+
+            .buy-buttons {
+                flex-direction: column;
+            }
+
+            .buy-btn {
+                justify-content: center;
+            }
+
+            .reviews-section {
+                padding: 0 1.25rem 3rem;
+            }
+
+            .reviews-heading {
+                font-size: 1.5rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                padding: 1.25rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Bar -->
+    <nav class="back-bar">
+        <a href="/en/" class="back-link">
+            <span>&larr;</span> Hejmadi.com
+        </a>
+        <div class="lang-switcher">
+            <span title="English">&#127468;&#127463;</span>
+            <span class="lang-divider">/</span>
+            <a href="index.html" class="lang-inactive" title="Dansk">&#127465;&#127472;</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <a href="https://www.saxo.com/dk/doktor-hansens-nye-praksis_bog_9788773391716" target="_blank" rel="noopener" title="Buy on Saxo.com" class="book-cover" style="background: none; display: block;">
+            <img src="/images/doktor-hansen-2.webp" alt="Doktor Hansens nye praksis" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 6px;">
+        </a>
+        <div class="book-details">
+            <h1 class="book-title">Doctor Hansen's New Practice</h1>
+            <p class="book-authors"><a href="https://www.andreaspihl.dk/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(26,26,26,0.1); text-underline-offset: 2px;">Andreas Pihl</a> &amp; Michael Skov Hejmadi</p>
+            <div class="badges">
+                <span class="badge badge-publisher">Gr&oslash;nningen 1 &middot; 2024</span>
+                <span class="badge badge-pensum">Required reading in Region Southern Denmark</span>
+            </div>
+            <p class="book-description">
+                The sequel to the popular Doctor Hansen book. Explores how AI and digitalization can relieve administrative burdens and create more time for patients. The book shows concretely how artificial intelligence can already heal the ailing healthcare system.
+            </p>
+            <div class="buy-buttons">
+                <a href="https://www.saxo.com/dk/doktor-hansens-nye-praksis_bog_9788773391716" class="buy-btn" target="_blank" rel="noopener">
+                    Paperback
+                </a>
+                <a href="https://www.saxo.com/dk/doktor-hansens-nye-praksis_epub_9788773396032" class="buy-btn" target="_blank" rel="noopener">
+                    E-book
+                </a>
+                <a href="https://www.saxo.com/dk/doktor-hansens-nye-praksis_lydbog_9788773395905" class="buy-btn" target="_blank" rel="noopener">
+                    Audiobook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2 class="reviews-heading">Reviews</h2>
+        <div class="reviews-grid">
+
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote class="review-quote">
+                    &ldquo;Artificial intelligence can cure the ailing healthcare system. That's what this new and very readable book is about.&rdquo;
+                </blockquote>
+                <div class="review-source">Altinget &mdash; 5/5 stars</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <blockquote class="review-quote">
+                    &ldquo;Highly relevant book that tackles the challenges facing general practice.&rdquo;
+                </blockquote>
+                <div class="review-source"><a href="https://ugeskriftet.dk/nyhed/forfattere-ny-teknologi-kan-redde-baade-patienter-og-almen-praksis-fra-kollaps" target="_blank" rel="noopener">Ugeskrift for L&aelig;ger</a> &mdash; 4/5 stars</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars"></div>
+                <blockquote class="review-quote">
+                    &ldquo;This provocative and inspiring book should be mandatory reading for everyone in healthcare.&rdquo;
+                </blockquote>
+                <div class="review-source">Practicus</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars"></div>
+                <blockquote class="review-quote">
+                    &ldquo;Visionary, important and well-crafted &mdash; a spirited, inspiring and easily digestible look into a world most of us don't know.&rdquo;
+                </blockquote>
+                <div class="review-source">Maria Cuculiza, <a href="https://sundhedskultur.dk/boger/756-ny-bog-om-doktor-hansens-traengsler-i-almen-praksis-er-visionaer-vigtig-og-veldrejet.html" target="_blank" rel="noopener">Sundhedskultur.dk</a></div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars"></div>
+                <blockquote class="review-quote">
+                    &ldquo;When the doctor becomes an app &mdash; worth recommending.&rdquo;
+                </blockquote>
+                <div class="review-source">Egon Clausen, Netavisen Pio</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars"></div>
+                <blockquote class="review-quote">
+                    &ldquo;Double review: GP Karin Zimmer and former innovation chief Henning Langberg each give their take on the book.&rdquo;
+                </blockquote>
+                <div class="review-source"><a href="https://dagensmedicin.dk/dobbeltanmeldelse-af-doktor-hansens-nye-praksis/" target="_blank" rel="noopener">Dagens Medicin</a></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 Michael Skov Hejmadi. All rights reserved.
+    </footer>
+
+</body>
+</html>

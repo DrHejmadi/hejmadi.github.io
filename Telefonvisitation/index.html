@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telefonvisitation — DSAM's guide til visitation af akutte patienter</title>
+  <meta name="description" content="DSAM's digitale guide til praksispersonale om telefonvisitation af akutte patienter. Triage i 5 kategorier med symptomguide, vejledning og HET-kriterier.">
+  <meta name="author" content="Michael Skov Hejmadi">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hejmadi.com/Telefonvisitation/">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Telefonvisitation — DSAM's guide til visitation af akutte patienter">
+  <meta property="og:description" content="Digital triageguide til praksispersonale. 5 visitationskategorier, symptomguide og HET-kriterier.">
+  <meta property="og:image" content="https://hejmadi.com/images/og-image.jpg">
+  <meta property="og:url" content="https://hejmadi.com/Telefonvisitation/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:site_name" content="Michael Skov Hejmadi">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Telefonvisitation — DSAM's guide til visitation af akutte patienter">
+  <meta name="twitter:description" content="Digital triageguide til praksispersonale. 5 visitationskategorier, symptomguide og HET-kriterier.">
+  <meta name="twitter:image" content="https://hejmadi.com/images/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Telefonvisitation",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "DKK"
+    },
+    "description": "DSAM's digitale guide til praksispersonale om telefonvisitation af akutte patienter. Triage i 5 kategorier.",
+    "author": { "@id": "https://hejmadi.com/#person" },
+    "url": "https://hejmadi.com/Telefonvisitation/"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <h1 class="logo"><a href="/" style="color: white; text-decoration: none; font-size: 0.8rem; font-weight: 500; opacity: 0.7; margin-right: 1rem;">&larr; Hejmadi.com</a> Telefonvisitation</h1>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav" id="mainNav">
+      <a href="#vejledning" class="nav-link active" data-section="vejledning">Vejledning</a>
+      <a href="#om" class="nav-link" data-section="om">Om Telefonvisitation</a>
+      <a href="#kolofon" class="nav-link" data-section="kolofon">Kolofon</a>
+      <a href="#kontakt" class="nav-link" data-section="kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Triage Legend Bar -->
+  <div class="triage-bar">
+    <div class="triage-item red-112"><span class="dot dot-red"></span>112</div>
+    <div class="triage-item red-akut"><span class="dot dot-red-dark"></span>Akut</div>
+    <div class="triage-item yellow-sub"><span class="dot dot-yellow"></span>Subakut</div>
+    <div class="triage-item green-24"><span class="dot dot-green"></span>24 timer</div>
+    <div class="triage-item green-rut"><span class="dot dot-green-dark"></span>Rutine</div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Sidebar / Symptom List -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Symptomer</h2>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Luk">&times;</button>
+      </div>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Søg efter symptom..." autocomplete="off">
+        <button class="search-clear" id="searchClear" aria-label="Ryd">&times;</button>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="alle">Alle</button>
+        <button class="filter-tab" data-filter="voksen">Voksen</button>
+        <button class="filter-tab" data-filter="barn">Barn</button>
+      </div>
+      <ul class="symptom-list" id="symptomList">
+        <!-- Populated by JS -->
+      </ul>
+    </aside>
+
+    <!-- Mobile: Floating button to open symptom list -->
+    <button class="fab-symptoms" id="fabSymptoms" aria-label="Vis symptomer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 12h6M9 16h6"/></svg>
+      <span>Symptomer</span>
+    </button>
+
+    <!-- Content Area -->
+    <div class="content" id="content">
+      <!-- Vejledning Section -->
+      <section class="section" id="vejledning">
+        <div class="content-tabs">
+          <button class="content-tab active" data-tab="information">Information</button>
+          <button class="content-tab" data-tab="trin">De 3 trin</button>
+          <button class="content-tab" data-tab="livsfarlig">Livsfarlige situationer</button>
+          <button class="content-tab" data-tab="het">HET</button>
+        </div>
+
+        <!-- Information Tab -->
+        <div class="tab-content active" id="tab-information">
+          <h2>Velkommen til Telefonvisitation.dk</h2>
+          <p class="lead">DSAM's guide til praksispersonale om visitation af akutte patienter</p>
+          <p>Denne telefonvisitationsguide har 5 visitationskategorier: 2 røde, 1 gul og 2 grønne.</p>
+
+          <div class="triage-cards">
+            <div class="triage-card triage-red-112">
+              <div class="triage-card-header">
+                <span class="triage-badge badge-red">Rød - 112</span>
+              </div>
+              <h4>Lægen adviseres straks</h4>
+              <p>Patienten er i livsfare. Vitale funktioner som vejrtrækning, bevidsthed og cirkulation er truede eller ophørt. Visitator adviserer straks lægen.</p>
+              <p class="triage-example"><strong>Eksempler:</strong> Bevidstløshed eller akut opståede brystsmerter.</p>
+            </div>
+
+            <div class="triage-card triage-red-akut">
+              <div class="triage-card-header">
+                <span class="triage-badge badge-red-dark">Rød - Akut</span>
+              </div>
+              <h4>Lægen adviseres hurtigst muligt</h4>
+              <p>Patientens liv er ikke umiddelbart i fare, men der er reel risiko for at tilstanden hurtigt kan forværres. Visitator adviserer hurtigst muligt lægen.</p>
+              <p class="triage-example"><strong>Eksempler:</strong> Nyopstået lammelse eller slapt barn med feber.</p>
+            </div>
+
+            <div class="triage-card triage-yellow">
+              <div class="triage-card-header">
+                <span class="triage-badge badge-yellow">Gul - Subakut</span>
+              </div>
+              <h4>Ses i dag / inden for få timer</h4>
+              <p>Patienter har en lidelse, som skal vurderes indenfor få timer. Visitator sørger for, at patienten får tid til konsultation eller hjemmebesøg indenfor få timer.</p>
+              <p class="triage-example"><strong>Eksempler:</strong> Blod-tilblandet afføring eller kraftig svimmelhed.</p>
+            </div>
+
+            <div class="triage-card triage-green-24">
+              <div class="triage-card-header">
+                <span class="triage-badge badge-green">Grøn - 24T</span>
+              </div>
+              <h4>Ses i dag eller i morgen</h4>
+              <p>Patienter med lidelser, som skal ses inden for det næste døgns tid, for at tilstanden ikke udvikler sig til noget farligt.</p>
+              <p class="triage-example"><strong>Eksempler:</strong> Urinvejsinfektion, bullen tå eller udslæt.</p>
+            </div>
+
+            <div class="triage-card triage-green-rutine">
+              <div class="triage-card-header">
+                <span class="triage-badge badge-green-dark">Grøn - Rutine</span>
+              </div>
+              <h4>Ses når der er tid i kalenderen</h4>
+              <p>Her er der intet tidspres, den normale arbejdsgang kan følges. Visitator sørger for, at patienten får tid til konsultation eller hjemmebesøg når der er tid.</p>
+              <p class="triage-example"><strong>Eksempler:</strong> Smerter i skulderen og hæmorider.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- De 3 Trin Tab -->
+        <div class="tab-content" id="tab-trin">
+          <h2>Telefonvisitationens 3 trin</h2>
+
+          <div class="step-cards">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-body">
+                <h3>Indsamling af oplysninger</h3>
+                <p>Formålet er at uddybe problemet eller klagen. Som visitator skal man være lyttende og opmuntre til uddybning.</p>
+                <ul>
+                  <li><strong>Åbne spørgsmål:</strong> Hvad er grunden til, at du ringer? Hvad er problemet?</li>
+                  <li><strong>Gør patienten tilpas:</strong> Det var godt, at du ringede om dette.</li>
+                  <li><strong>Præciser problemet:</strong> Hvad mener du med 'at være svimmel'?</li>
+                  <li><strong>Spørg til angst og uro:</strong> Hvad er du bekymret for? Er du urolig?</li>
+                  <li><strong>Hovedårsag:</strong> Hvad er dit spørgsmål egentlig?</li>
+                  <li><strong>Forventninger:</strong> Hvad ønsker du, der skal ske nu?</li>
+                </ul>
+                <p><strong>Supplerende spørgsmål:</strong></p>
+                <ul>
+                  <li>Hvor længe har det varet?</li>
+                  <li>Hvordan er det forløbet: Værre, uændret eller bedre?</li>
+                  <li>Er der andre symptomer?</li>
+                  <li>Har du andre sygdomme - tager du noget medicin?</li>
+                  <li>Kan patienten selv komme til telefonen? Hvis ikke: Hvorfor?</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-body">
+                <h3>Triage</h3>
+                <p>Triage betyder at træffe en beslutning om, hvor hurtigt en patient skal ses af lægen ('triage' kommer af det franske verbum 'trier' - at sortere).</p>
+                <p>På baggrund af de indsamlede oplysninger vælger visitator en visitationskategori: rød, gul eller grøn.</p>
+                <div class="callout callout-warning">
+                  <h4>Visitationskategorien kan opgraderes ved:</h4>
+                  <ul>
+                    <li>Patienter med flere lidelser (komorbiditet) eller stort medicinforbrug</li>
+                    <li>Formindsket modstandskraft, fx pga. kemoterapi eller AIDS</li>
+                    <li>Gentagne kontakter vedrørende samme problem</li>
+                    <li>Kommunikationsproblemer</li>
+                    <li>Uklar henvendelsesårsag</li>
+                    <li>Utryg fornemmelse hos visitator</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-body">
+                <h3>Råd</h3>
+                <p>Hvis det besluttes, at patienten skal have en konsultation hos lægen, kan det ofte være nyttigt at give patienten råd om, hvad der kan gøres, indtil konsultationen finder sted.</p>
+                <p>Hvis der ikke er behov for kontakt med lægen, kan visitator give patienten råd om selvbehandling.</p>
+                <div class="callout callout-info">
+                  <p><strong>Husk:</strong> Visitator skal til sidst vurdere, om patienten - eller personen, der har ringet - er tilfreds med visitationen. Hvis det ikke er tilfældet, bør man spørge om grunden.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-danger">
+            <h4>Fældgruber at undgå</h4>
+            <ul>
+              <li>Visitator stiller kun lukkede spørgsmål og får ikke afdækket det reelle problem.</li>
+              <li>Visitator tolker problemet for hurtigt eller giver råd, før henvendelsesgrunden er præcist afklaret.</li>
+              <li>Husk at tjekke, om patienten skal opgraderes, jvf. triagens trin 2.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Livsfarlige situationer Tab -->
+        <div class="tab-content" id="tab-livsfarlig">
+          <h2>Retningslinjer ved livsfarlige situationer</h2>
+
+          <div class="callout callout-danger">
+            <p><strong>Patientens liv er i fare</strong>, hvis der er problemer med de vitale funktioner: vejrtrækning, cirkulation og bevidsthed. At identificere dette og handle derudfra er livsvigtigt for patienten.</p>
+          </div>
+
+          <p>Hvis der er tale om en livstruende situation, skal visitator holde kontakten med den indringende indtil ambulancen eller lægen er nået frem.</p>
+
+          <div class="callout callout-warning">
+            <h4>Hvis det ikke er muligt, er den vigtigste instruktion:</h4>
+            <ul>
+              <li>At ringe op med det samme, hvis situationen forværres</li>
+              <li>Ikke at tabe patienten af syne</li>
+            </ul>
+          </div>
+
+          <h3>Indlæggelse med 112</h3>
+          <p>Hvis det drejer sig om patienter med livstruende symptomer, bør pt. indlægges direkte af lægen med en ambulance. Lægen ringer 112.</p>
+
+          <div class="info-box">
+            <h4>Vigtige oplysninger til lægen:</h4>
+            <ul>
+              <li>CPR-nummer</li>
+              <li>Navn, adresse og telefonnummer</li>
+              <li>Oplysninger om lidelse eller symptomer</li>
+            </ul>
+            <h4>Hvis muligt, uddyb med:</h4>
+            <ul>
+              <li>Vågen, halvt bevidstløs, i koma</li>
+              <li>Vejrtrækningen - normal, besværet, ved at kvæles</li>
+              <li>Hvilke instruktioner, der er givet til personen, der ringede ind</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HET Tab -->
+        <div class="tab-content" id="tab-het">
+          <h2>Høj Energi Traumer (HET)</h2>
+
+          <div class="callout callout-danger">
+            <p>Ved ulykker kan der overføres store mængder energi til menneskets krop. Det kan føre til alvorlige og indvendige skader, der ikke altid er synlige.</p>
+          </div>
+
+          <p><strong>Mennesker, der har været udsat for HET, skal undersøges og kontrolleres nøje. De skal som udgangspunkt visiteres som "rød" og indlægges med ambulance.</strong></p>
+
+          <div class="het-criteria">
+            <h3>Der er tale om HET, når følgende er sket:</h3>
+            <div class="het-cards">
+              <div class="het-card">
+                <div class="het-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><path d="M12 2l4 4M12 2L8 6"/></svg>
+                </div>
+                <p>Fald &gt; 3 meter</p>
+              </div>
+              <div class="het-card">
+                <div class="het-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="16" height="8" rx="2"/><circle cx="6" cy="16" r="2"/><circle cx="14" cy="16" r="2"/></svg>
+                </div>
+                <p>Trafikulykke i bil &gt; 70 km/t</p>
+              </div>
+              <div class="het-card">
+                <div class="het-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 12h8"/></svg>
+                </div>
+                <p>Påkørt blød trafikant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Om Section -->
+      <section class="section hidden" id="om">
+        <h2>Om Telefonvisitation</h2>
+        <p>Telefonvisitation.dk er DSAM's (Dansk Selskab for Almen Medicin) guide til praksispersonale om visitation af akutte patienter.</p>
+
+        <h3>Forudsætninger for god visitation</h3>
+        <div class="info-box">
+          <ul>
+            <li>Personalet skal oplæres i at bruge guiden og have instruktioner på skrift om, hvad de må gøre selvstændigt.</li>
+            <li>Travlhed, lægens fravær eller frygt for at blive afvist må ikke hindre kontakten mellem visitator og lægen.</li>
+            <li>Lægerne skal give feedback på visitators arbejde.</li>
+            <li>Ved uenighed med patienten om visitationsniveauet kan det skrives ind i journalen, at visitationsguiden er brugt.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Kolofon Section -->
+      <section class="section hidden" id="kolofon">
+        <h2>Kolofon</h2>
+        <div class="info-box">
+          <p><strong>Udgiver:</strong> Dansk Selskab for Almen Medicin (DSAM)</p>
+          <p><strong>Opdateret:</strong> April 2021</p>
+          <p><strong>Web-version:</strong> Michael Skov Hejmadi</p>
+        </div>
+      </section>
+
+      <!-- Kontakt Section -->
+      <section class="section hidden" id="kontakt">
+        <h2>Kontakt</h2>
+        <div class="contact-card">
+          <h3>Dansk Selskab for Almen Medicin</h3>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Stockholmsgade 55, st.<br>2100 København Ø</span>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:70707431">7070 7431</a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:dsam@dsam.dk">dsam@dsam.dk</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Dansk Selskab for Almen Medicin &middot; Stockholmsgade 55, st. &middot; 2100 København Ø</p>
+      <p>Tlf: <a href="tel:70707431">7070 7431</a> &middot; E-mail: <a href="mailto:dsam@dsam.dk">dsam@dsam.dk</a></p>
+      <p class="footer-meta">Opdateret April 2021 &middot; Web-version af <a href="https://hejmadi.com">Michael Skov Hejmadi</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

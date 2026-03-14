@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Age – Lev l&aelig;ngere | Michael Skov Hejmadi</title>
+    <meta name="description" content="Anti-Age – Lev l&aelig;ngere af Jannick B. Pedersen &amp; Michael Hejmadi Pedersen. En bog om teknologiens indflydelse p&aring; vores liv og hvordan vi kan leve l&aelig;ngere og sundere.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/boeger/anti-age/">
+    <link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/anti-age/">
+    <link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/anti-age/en.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Anti-Age – Lev længere">
+    <meta property="og:description" content="Anti-Age – Lev længere af Jannick B. Pedersen og Michael Hejmadi Pedersen.">
+    <meta property="og:image" content="https://hejmadi.com/images/anti-age.webp">
+    <meta property="og:url" content="https://hejmadi.com/boeger/anti-age/">
+    <meta property="og:type" content="book">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anti-Age – Lev længere">
+    <meta name="twitter:image" content="https://hejmadi.com/images/anti-age.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Anti-Age – Lev længere",
+      "author": [{ "@type": "Person", "name": "Jannick B. Pedersen" }, { "@id": "https://hejmadi.com/#person" }],
+      "url": "https://hejmadi.com/boeger/anti-age/",
+      "image": "https://hejmadi.com/images/anti-age.webp",
+      "inLanguage": "da",
+      "datePublished": "2018",
+      "publisher": { "@type": "Organization", "name": "People's Press" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FDFBF7;
+            --color-bg-alt: #F5F1E8;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #2D5A4A;
+            --color-accent-light: #3D7A64;
+            --color-accent-subtle: rgba(45, 90, 74, 0.08);
+            --color-warm: #C4A77D;
+            --color-border: rgba(26, 26, 26, 0.1);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            --max-width: 1200px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Back bar ── */
+        .back-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity var(--transition);
+        }
+
+        .back-bar a:hover {
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        .lang-switcher span {
+            cursor: default;
+        }
+
+        .lang-switcher .lang-separator {
+            opacity: 0.4;
+            font-size: 0.85rem;
+        }
+
+        .lang-active {
+            opacity: 1;
+        }
+
+        .lang-inactive {
+            opacity: 0.45;
+            transition: opacity var(--transition);
+        }
+
+        .lang-inactive:hover {
+            opacity: 0.75;
+        }
+
+        /* ── Hero ── */
+        .book-hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .book-cover-wrapper {
+            position: relative;
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: linear-gradient(135deg, #8B6B4A 0%, #A88B6B 100%);
+            border-radius: 6px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                0 8px 20px rgba(0, 0, 0, 0.1),
+                4px 0 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 40%),
+                linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 5%, transparent 95%, rgba(0,0,0,0.08) 100%);
+            pointer-events: none;
+        }
+
+        .book-cover-title {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-cover-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin-top: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-info {
+            padding-top: 0.5rem;
+        }
+
+        .book-title {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+        }
+
+        .book-authors {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+
+        .book-meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .book-meta-badge .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--color-warm);
+            border-radius: 50%;
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .book-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 560px;
+        }
+
+        .book-description em {
+            font-style: italic;
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+
+        .buy-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .buy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-accent);
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px;
+            transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+        }
+
+        .buy-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(45, 90, 74, 0.25);
+        }
+
+        .buy-btn .btn-sub {
+            font-size: 0.8rem;
+            opacity: 0.75;
+            font-weight: 400;
+        }
+
+        /* ── Reviews ── */
+        .reviews-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+        }
+
+        .section-heading {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .review-card {
+            background: var(--color-bg-alt);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem 1.75rem;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '\201C';
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-accent);
+            opacity: 0.2;
+            position: absolute;
+            top: 0.25rem;
+            left: 1rem;
+            line-height: 1;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--color-text);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+            padding-top: 0.25rem;
+        }
+
+        .review-source {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .review-source a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+
+        .review-source a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .review-rating {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .review-rating-sub {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ── Update notice ── */
+        .update-notice {
+            max-width: var(--max-width);
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .update-box {
+            border: 2px dashed var(--color-accent);
+            background: var(--color-accent-subtle);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            text-align: center;
+        }
+
+        .update-box-heading {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .update-box-text {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .book-hero {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2.5rem 1.5rem 2rem;
+            }
+
+            .book-cover-wrapper {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .book-title {
+                font-size: 1.9rem;
+            }
+
+            .book-info {
+                text-align: center;
+            }
+
+            .book-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buy-buttons {
+                justify-content: center;
+            }
+
+            .reviews-section {
+                padding: 1.5rem 1.5rem 2.5rem;
+            }
+
+            .update-notice {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .back-bar {
+                padding: 0.65rem 1.25rem;
+            }
+
+            .book-hero {
+                padding: 2rem 1.25rem 1.5rem;
+            }
+
+            .book-cover-wrapper {
+                max-width: 240px;
+            }
+
+            .book-cover-title {
+                font-size: 2.2rem;
+            }
+
+            .book-title {
+                font-size: 1.6rem;
+            }
+
+            .buy-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .buy-btn {
+                justify-content: center;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .update-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back bar -->
+    <nav class="back-bar">
+        <a href="/" class="back-link">&larr; Hejmadi.com</a>
+        <div class="lang-switcher">
+            <span class="lang-active" title="Dansk">&#127465;&#127472;</span>
+            <span class="lang-separator">/</span>
+            <a href="en.html" class="lang-inactive" title="English">&#127468;&#127463;</a>
+        </div>
+    </nav>
+
+    <!-- Book hero -->
+    <section class="book-hero">
+        <div class="book-cover-wrapper">
+            <a href="https://www.saxo.com/dk/antiage_jannick-b-pedersen-michael-hejmadi-pedersen_epub_9788772009735" target="_blank" rel="noopener" title="Køb på Saxo.com" class="book-cover" style="background: none; display: block;">
+                <img src="/images/anti-age.webp" alt="Anti-Age – Lev længere" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 6px;">
+            </a>
+        </div>
+
+        <div class="book-info">
+            <h1 class="book-title">Anti-Age &ndash; Lev l&aelig;ngere</h1>
+            <p class="book-authors">Jannick B. Pedersen &amp; Michael Hejmadi Pedersen</p>
+
+            <div class="book-meta-badge">
+                <span>People's Press</span>
+                <span class="dot"></span>
+                <span>2018</span>
+            </div>
+            <br>
+
+            <div class="update-badge">En opdateret udgave er undervejs i 2026</div>
+
+            <p class="book-description">
+                <em>Dr&oslash;m, h&aring;b, handling.</em> En bog om teknologiens indflydelse p&aring; vores liv og hvordan vi kan leve l&aelig;ngere og sundere. Bogen gennemg&aring;r de nyeste fremskridt inden for anti-aging forskning og giver praktiske r&aring;d til et l&aelig;ngere, sundere liv.
+            </p>
+
+            <div class="buy-buttons">
+                <a href="https://www.saxo.com/dk/antiage_jannick-b-pedersen-michael-hejmadi-pedersen_haeftet_9788772008899" class="buy-btn" target="_blank" rel="noopener">
+                    H&aelig;ftet
+                </a>
+                <a href="https://www.saxo.com/dk/antiage_jannick-b-pedersen-michael-hejmadi-pedersen_epub_9788772009735" class="buy-btn" target="_blank" rel="noopener">
+                    E-bog
+                </a>
+                <a href="https://www.saxo.com/dk/antiage_jannick-b-pedersen-michael-hejmadi-pedersen_lydbog_9788772009858" class="buy-btn" target="_blank" rel="noopener">
+                    Lydbog <span class="btn-sub">Morten R&oslash;nnelund &middot; 3t 39m</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section">
+        <h2 class="section-heading">Anmeldelser</h2>
+        <div class="reviews-grid">
+            <blockquote class="review-card">
+                <p class="review-text">Sp&aelig;ndende og let l&aelig;selig bog &mdash; letl&aelig;selig, motiverende og seri&oslash;s.</p>
+                <cite class="review-source">L&aelig;seranmeldelse</cite>
+            </blockquote>
+
+            <blockquote class="review-card">
+                <p class="review-text">En vigtig bog om hvordan teknologi og videnskab kan hj&aelig;lpe os med at leve l&aelig;ngere og sundere.</p>
+                <cite class="review-source">L&aelig;seranmeldelse</cite>
+            </blockquote>
+
+            <blockquote class="review-card">
+                <div class="review-rating">3.7 / 5</div>
+                <p class="review-rating-sub">35 ratings p&aring; Mofibo</p>
+                <cite class="review-source">Mofibo</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Update notice -->
+    <div class="update-notice">
+        <div class="update-box">
+            <p class="update-box-heading">Opdateret udgave undervejs</p>
+            <p class="update-box-text">
+                En opdateret udgave af Anti-Age er undervejs i 2026. Bogen vil indeholde de seneste fremskridt inden for anti-aging og longevity.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        &copy; 2025 Michael Skov Hejmadi
+    </footer>
+
+</body>
+</html>

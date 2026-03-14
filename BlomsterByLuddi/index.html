@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlomsterByLuddi — Din personlige haveekspert</title>
+    <meta name="description" content="BlomsterByLuddi bruger kunstig intelligens til at planlægge dit perfekte blomsterbed. Tag et billede, besvar et par spørgsmål, og modtag en komplet beplantningsplan tilpasset danske forhold.">
+    <meta name="author" content="Louise Skov Hejmadi, Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/BlomsterByLuddi/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="BlomsterByLuddi — Din personlige haveekspert">
+    <meta property="og:description" content="AI-drevet blomsterbeds-planlægning tilpasset danske forhold. Tag et billede og modtag en komplet beplantningsplan.">
+    <meta property="og:image" content="https://hejmadi.com/images/og-image.jpg">
+    <meta property="og:url" content="https://hejmadi.com/BlomsterByLuddi/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BlomsterByLuddi — Din personlige haveekspert">
+    <meta name="twitter:description" content="AI-drevet blomsterbeds-planlægning tilpasset danske forhold.">
+    <meta name="twitter:image" content="https://hejmadi.com/images/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BlomsterByLuddi",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS 17.0+",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "DKK"
+      },
+      "description": "Din personlige haveekspert. Planlæg dit perfekte blomsterbed med kunstig intelligens tilpasset danske forhold.",
+      "author": [
+        { "@type": "Person", "name": "Louise Skov Hejmadi" },
+        { "@id": "https://hejmadi.com/#person" }
+      ],
+      "featureList": [
+        "AI-baseret billedanalyse af blomsterbede",
+        "Beplantningsplaner tilpasset dansk klima (zone 7-8)",
+        "Snegleresistente planter",
+        "Bestøvervenlige blomster",
+        "Komplet indkøbsliste"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-bg: #FDFBF7;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #2d5016;
+            --color-accent-mid: #3a6b35;
+            --color-accent-light: #4a7c59;
+            --color-border: rgba(26, 26, 26, 0.1);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s;
+        }
+
+        nav a.back {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+        }
+        nav a.back:hover { color: var(--color-text); }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-muted);
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: var(--color-text); }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            text-align: center;
+            background: linear-gradient(135deg, #2d5016 0%, #3a6b35 50%, #4a7c59 100%);
+            color: white;
+        }
+
+        .hero .emoji {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.4rem 1.2rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent-light);
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol { padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        a { color: var(--color-accent-light); }
+
+        .divider {
+            height: 1px;
+            background: #e8e4dd;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Features */
+        .features {
+            background: #f5f2ec;
+            padding: 5rem 2rem;
+        }
+
+        .features-grid {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, #1a2f1a 0%, #2d4a2d 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-section .section-label { color: #8ab88a; }
+        .contact-section h2 { color: white; }
+        .contact-section p { color: rgba(255,255,255,0.8); }
+        .contact-section a { color: #a8d8a8; text-decoration: none; }
+        .contact-section a:hover { text-decoration: underline; }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a { color: #aaa; text-decoration: none; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 8rem 1.5rem 3rem; }
+            .section { padding: 3rem 1.5rem; }
+            nav .nav-links a { margin-left: 1rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="back">&larr; Hejmadi.com</a>
+    <div class="nav-links">
+        <a href="#om">Om appen</a>
+        <a href="#privacy">Privatlivspolitik</a>
+        <a href="#support">Support</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <span class="emoji">&#127803;</span>
+    <h1>BlomsterByLuddi</h1>
+    <p>Din personlige haveekspert. Planlæg dit perfekte blomsterbed med kunstig intelligens.</p>
+    <span class="badge">iOS-app &middot; Gratis</span>
+</section>
+
+<section class="features" id="om">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <p class="section-label">Om appen</p>
+        <h2>Blomsterbeds-planlægning gjort nemt</h2>
+        <p style="color: #555;">Tag et billede af dit tomme blomsterbed, besvar et par spørgsmål om jord og lysforhold, og modtag en komplet beplantningsplan tilpasset danske forhold.</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">&#128247;</div>
+            <h4>Billedanalyse</h4>
+            <p>Upload et foto af dit bed og få en AI-analyse af størrelse, form og forhold.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#127793;</div>
+            <h4>Danske planter</h4>
+            <p>Kun planter der trives i dansk klima (zone 7-8). Stauder som rygrad.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#128029;</div>
+            <h4>Snegle & bestøvere</h4>
+            <p>Snegleresistente planter og blomster der tiltrækker bier og sommerfugle.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#128203;</div>
+            <h4>Indkøbsliste</h4>
+            <p>Komplet liste klar til at tage med i havecenteret.</p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+    <p class="section-label">Sådan virker det</p>
+    <h2>Kom i gang på 4 trin</h2>
+    <ol>
+        <li>Gå til <strong>Indstillinger</strong> og indtast din Anthropic API-nøgle (fra <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>)</li>
+        <li>Tag et billede af dit tomme blomsterbed med kamera-knappen</li>
+        <li>Besvar AI-assistentens spørgsmål om jord, lys og ønsker</li>
+        <li>Modtag din personlige beplantningsplan med indkøbsliste</li>
+    </ol>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="privacy">
+    <p class="section-label">Privatlivspolitik</p>
+    <h2>Privacy Policy</h2>
+    <p><strong>Sidst opdateret:</strong> 13. marts 2026</p>
+
+    <h3>Introduktion</h3>
+    <p>BlomsterByLuddi ("appen") er udviklet af Louise Skov Hejmadi feat Michael Skov Hejmadi. Vi respekterer dit privatliv og er forpligtet til at beskytte dine personlige data.</p>
+
+    <h3>Hvilke data indsamler vi?</h3>
+    <p>BlomsterByLuddi indsamler og opbevarer <strong>minimale data</strong>:</p>
+    <ul>
+        <li><strong>API-nøgle:</strong> Din Anthropic API-nøgle gemmes lokalt på din enhed i appens indstillinger. Den sendes kun til Anthropics servere for at behandle dine anmodninger.</li>
+        <li><strong>Billeder:</strong> Billeder du vælger at uploade sendes til Anthropics API til analyse. De gemmes ikke permanent af appen.</li>
+        <li><strong>Chatbeskeder:</strong> Dine samtaler opbevares kun midlertidigt i appens hukommelse under brug og slettes når appen lukkes.</li>
+    </ul>
+
+    <h3>Tredjepartstjenester</h3>
+    <p>Appen bruger Anthropics Claude API til at levere AI-baseret rådgivning. Når du bruger appen, sendes dine beskeder og eventuelle billeder til Anthropics servere. Anthropics privatlivspolitik gælder for deres behandling af disse data. Se: <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></p>
+
+    <h3>Datalagring</h3>
+    <ul>
+        <li>Ingen data sendes til vores egne servere.</li>
+        <li>Ingen brugerkonti oprettes.</li>
+        <li>Ingen analyse- eller sporingsværktøjer bruges.</li>
+        <li>Ingen data sælges eller deles med tredjeparter (udover Anthropic som beskrevet ovenfor).</li>
+    </ul>
+
+    <h3>Dine rettigheder</h3>
+    <p>Da vi ikke opbevarer personlige data, er der ingen data at slette eller eksportere. Du kan til enhver tid fjerne din API-nøgle fra appens indstillinger og slette appen fra din enhed.</p>
+
+    <h3>Børns privatliv</h3>
+    <p>Appen er ikke rettet mod børn under 13 år. Vi indsamler ikke bevidst data fra børn.</p>
+
+    <h3>Ændringer</h3>
+    <p>Vi kan opdatere denne privatlivspolitik fra tid til anden. Ændringer vil blive offentliggjort på denne side.</p>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="support">
+    <p class="section-label">Support</p>
+    <h2>Hjælp & support</h2>
+
+    <h3>Ofte stillede spørgsmål</h3>
+
+    <p><strong>Hvor får jeg en API-nøgle?</strong></p>
+    <p>Opret en konto på <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> og generer en API-nøgle under API Keys.</p>
+
+    <p><strong>Koster det noget at bruge appen?</strong></p>
+    <p>Appen er gratis at downloade, men du betaler for dit eget API-forbrug hos Anthropic. En typisk haveplanlægning koster nogle få kroner.</p>
+
+    <p><strong>Virker appen offline?</strong></p>
+    <p>Nej, appen kræver internetforbindelse for at kommunikere med AI-tjenesten.</p>
+
+    <p><strong>Er mine data sikre?</strong></p>
+    <p>Ja. Ingen data gemmes på vores servere. Alt forbliver på din enhed eller sendes krypteret til Anthropics API.</p>
+
+    <h3>Kontakt os</h3>
+    <p>Har du spørgsmål, feedback eller brug for hjælp?</p>
+    <p>Skriv til: <a href="mailto:michael@hejmadi.com">michael@hejmadi.com</a></p>
+</section>
+
+<section class="contact-section">
+    <p class="section-label">Kontakt</p>
+    <h2>Har du brug for hjælp?</h2>
+    <p>Vi svarer hurtigst muligt på alle henvendelser.</p>
+    <p style="margin-top: 1.5rem; font-size: 1.1rem;"><a href="mailto:michael@hejmadi.com">michael@hejmadi.com</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2026 BlomsterByLuddi. En app af <strong>Louise Skov Hejmadi</strong> feat <strong>Michael Skov Hejmadi</strong>.</p>
+    <p style="margin-top: 0.5rem;">
+        <a href="#privacy">Privatlivspolitik</a> &middot;
+        <a href="#support">Support</a> &middot;
+        <a href="https://hejmadi.com">hejmadi.com</a>
+    </p>
+</footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        nav.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NemJPG – Konverter billeder til JPG med et klik</title>
+    <meta name="description" content="NemJPG konverterer PNG, HEIC, WebP, TIFF og flere formater til JPG med et dobbeltklik. Gratis, ingen installation, under 4 KB.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/NemJPG/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NemJPG – Konverter billeder til JPG med et klik">
+    <meta property="og:description" content="Gratis Windows-værktøj der konverterer PNG, HEIC, WebP og flere formater til JPG. Ingen installation, under 4 KB.">
+    <meta property="og:image" content="https://hejmadi.com/images/og-image.jpg">
+    <meta property="og:url" content="https://hejmadi.com/NemJPG/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NemJPG – Konverter billeder til JPG med et klik">
+    <meta name="twitter:description" content="Gratis Windows-værktøj. Ingen installation, under 4 KB.">
+    <meta name="twitter:image" content="https://hejmadi.com/images/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NemJPG",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 7, 8, 10, 11",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DKK" },
+      "description": "Konverter alle billedformater til JPG med et dobbeltklik. Gratis, ingen installation.",
+      "author": { "@type": "Person", "@id": "https://hejmadi.com/#person", "name": "Michael Skov Hejmadi" },
+      "fileSize": "4KB",
+      "downloadUrl": "https://hejmadi.com/NemJPG/Konverter til JPG.bat"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FDFBF7;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #2C5F9A;
+            --color-accent-hover: #1E4A7A;
+            --color-accent-light: rgba(44, 95, 154, 0.08);
+            --color-green: #4CAF50;
+            --color-green-hover: #388E3C;
+            --color-border: rgba(26, 26, 26, 0.1);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7; font-size: 17px;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border); padding: 1rem 2rem;
+        }
+        .nav-inner {
+            max-width: 1000px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+            color: var(--color-text); text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+        }
+        .nav-logo:hover { color: var(--color-accent); }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a {
+            font-size: 0.95rem; font-weight: 500; color: var(--color-text-muted);
+            text-decoration: none;
+        }
+        .nav-links a:hover { color: var(--color-accent); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #4A90D9 0%, #2C5F9A 100%);
+            padding: 8rem 2rem 5rem; text-align: center; color: white;
+        }
+        .hero-icon {
+            width: 140px; height: 140px; border-radius: 28px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25); margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400; margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.15rem; opacity: 0.9; max-width: 550px; margin: 0 auto 2rem;
+        }
+
+        /* Download */
+        .download-box {
+            max-width: 500px; margin: -2.5rem auto 0; position: relative; z-index: 10;
+            background: white; padding: 2rem; border-radius: 16px; text-align: center;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--color-green); color: white; padding: 1rem 2.5rem;
+            border-radius: 12px; text-decoration: none; font-size: 1.15rem; font-weight: 600;
+            transition: background 0.2s;
+        }
+        .download-btn:hover { background: var(--color-green-hover); }
+        .download-btn svg { width: 20px; height: 20px; }
+        .download-meta {
+            color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;
+        }
+
+        /* Sections */
+        .section-inner { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-label {
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--color-accent); margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400; margin-bottom: 1.5rem;
+        }
+        p + p { margin-top: 0.8rem; }
+
+        /* Steps */
+        .steps { list-style: none; counter-reset: step; margin-top: 1.5rem; }
+        .steps li {
+            counter-increment: step; position: relative;
+            padding: 1.25rem 1.25rem 1.25rem 4rem;
+            background: white; border-radius: 12px; margin-bottom: 0.75rem;
+            border: 1px solid var(--color-border);
+        }
+        .steps li::before {
+            content: counter(step); position: absolute; left: 1rem; top: 1.15rem;
+            width: 2rem; height: 2rem; background: var(--color-accent); color: white;
+            border-radius: 50%; text-align: center; line-height: 2rem;
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .steps li strong { color: var(--color-text); }
+        .steps li p, .steps li { color: var(--color-text-muted); }
+
+        /* Formats */
+        .formats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+        .format-tag {
+            background: var(--color-accent-light); color: var(--color-accent);
+            padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+        }
+        .format-tag.extra { background: rgba(230, 81, 0, 0.08); color: #e65100; }
+
+        /* Req table */
+        .req-table {
+            width: 100%; border-collapse: collapse; margin-top: 1rem;
+            background: white; border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+        .req-table th {
+            background: var(--color-accent); color: white;
+            padding: 0.75rem 1rem; text-align: left; font-weight: 600;
+        }
+        .req-table td {
+            padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+        }
+        .req-table td strong { color: var(--color-text); }
+        .req-table tr:last-child td { border-bottom: none; }
+
+        /* Tech box */
+        .tech-box {
+            background: white; border-left: 4px solid var(--color-accent);
+            padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1rem;
+            border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent);
+        }
+        .tech-box ol { margin-top: 0.75rem; padding-left: 1.5rem; }
+        .tech-box li { margin-bottom: 0.5rem; color: var(--color-text-muted); }
+        code {
+            background: var(--color-accent-light); padding: 0.15rem 0.4rem;
+            border-radius: 4px; font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-left: 3px solid var(--color-accent);
+            padding: 1rem 0 1rem 1.25rem; margin-bottom: 1.25rem;
+        }
+        .faq-item h3 {
+            font-family: var(--font-display); font-size: 1.05rem; font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .faq-item p { color: var(--color-text-muted); }
+
+        /* Divider */
+        .section-divider { border: none; border-top: 1px solid var(--color-border); margin: 0; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 2rem; color: var(--color-text-muted); font-size: 0.85rem;
+        }
+        footer a { color: inherit; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .nav-links { gap: 1rem; }
+            .hero { padding: 7rem 1.5rem 4rem; }
+            .section-inner { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                Hejmadi.com
+            </a>
+            <div class="nav-links">
+                <a href="#vejledning">Vejledning</a>
+                <a href="#formater">Formater</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="icon.svg" alt="NemJPG ikon" class="hero-icon">
+        <h1>NemJPG</h1>
+        <p>Konverter alle dine billeder til JPG med et enkelt dobbeltklik. Gratis, ingen installation.</p>
+    </section>
+
+    <!-- Download Box -->
+    <div class="download-box">
+        <a href="Konverter til JPG.bat" download class="download-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download NemJPG
+        </a>
+        <p class="download-meta">En enkelt fil &middot; under 4 KB &middot; kræver kun Windows</p>
+    </div>
+
+    <!-- Hvad er NemJPG -->
+    <div class="section-inner">
+        <p class="section-label">Om programmet</p>
+        <h2 class="section-title">Hvad er NemJPG?</h2>
+        <p>NemJPG er et lille, gratis program til Windows der konverterer alle billedfiler i en mappe til JPG-format. Det kræver ingen installation &mdash; du lægger bare filen i den mappe hvor dine billeder ligger, og dobbeltklikker.</p>
+        <p>Originale filer beholdes altid. Der oprettes nye <code>.jpg</code>-filer ved siden af med 95% kvalitet. Billeder der allerede er JPG springes over.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Vejledning -->
+    <div class="section-inner" id="vejledning">
+        <p class="section-label">Kom i gang</p>
+        <h2 class="section-title">Sådan bruger du det</h2>
+        <ol class="steps">
+            <li><strong>Download filen</strong> <code>Konverter til JPG.bat</code> fra denne side.</li>
+            <li><strong>Flyt filen</strong> til den mappe hvor dine billeder ligger.</li>
+            <li><strong>Dobbeltklik</strong> på filen. Et vindue åbner og viser status for hver fil.</li>
+            <li><strong>Færdig!</strong> Dine nye JPG-filer ligger nu i samme mappe.</li>
+        </ol>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Formater -->
+    <div class="section-inner" id="formater">
+        <p class="section-label">Kompatibilitet</p>
+        <h2 class="section-title">Understøttede formater</h2>
+        <p>Følgende billedformater konverteres automatisk til JPG:</p>
+        <div class="formats">
+            <span class="format-tag">PNG</span>
+            <span class="format-tag">BMP</span>
+            <span class="format-tag">GIF</span>
+            <span class="format-tag">TIFF</span>
+            <span class="format-tag">WebP</span>
+            <span class="format-tag">ICO</span>
+            <span class="format-tag">WDP</span>
+        </div>
+        <p style="margin-top: 1.25rem;">Med Windows-codecs (ofte allerede installeret på Windows 10/11):</p>
+        <div class="formats">
+            <span class="format-tag extra">HEIC</span>
+            <span class="format-tag extra">HEIF</span>
+            <span class="format-tag extra">AVIF</span>
+        </div>
+        <p style="margin-top: 1.25rem;">RAW-formater fra kameraer (kræver kamera-codecs):</p>
+        <div class="formats">
+            <span class="format-tag extra">DNG</span>
+            <span class="format-tag extra">CR2</span>
+            <span class="format-tag extra">NEF</span>
+            <span class="format-tag extra">ARW</span>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Systemkrav -->
+    <div class="section-inner">
+        <p class="section-label">Krav</p>
+        <h2 class="section-title">Systemkrav</h2>
+        <table class="req-table">
+            <tr><th>Krav</th><th>Detaljer</th></tr>
+            <tr><td><strong>Styresystem</strong></td><td>Windows 7, 8, 10 eller 11</td></tr>
+            <tr><td><strong>PowerShell</strong></td><td>Version 3.0+ (indbygget fra Windows 7 SP1)</td></tr>
+            <tr><td><strong>.NET Framework</strong></td><td>3.0+ (indbygget i Windows)</td></tr>
+            <tr><td><strong>Installation</strong></td><td>Ingen &mdash; programmet er en enkelt fil</td></tr>
+            <tr><td><strong>Filstørrelse</strong></td><td>Under 4 KB</td></tr>
+        </table>
+        <p style="margin-top: 1rem; color: var(--color-text-muted); font-size: 0.9rem;">
+            <strong>Bemærk:</strong> HEIC- og WebP-support kræver at de relevante codecs er installeret
+            fra Microsoft Store (HEIF Image Extension / WebP Image Extension).
+            Disse er ofte pre-installeret på Windows 10 og 11.
+        </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Teknisk -->
+    <div class="section-inner">
+        <p class="section-label">Under motorhjelmen</p>
+        <h2 class="section-title">Hvordan virker det?</h2>
+        <div class="tech-box">
+            <p>NemJPG er et batch-script (<code>.bat</code>) med indlejret PowerShell-kode. Når du dobbeltklikker:</p>
+            <ol>
+                <li>Batch-scriptet starter og udpakker PowerShell-koden til en midlertidig fil.</li>
+                <li>PowerShell indlæser Windows' indbyggede <code>PresentationCore</code> (WPF) bibliotek.</li>
+                <li>Mappen scannes for billedfiler med kendte filendelser.</li>
+                <li>Hvert billede åbnes med Windows' <strong>WIC</strong> (Windows Imaging Component).</li>
+                <li>Billedet tegnes på hvid baggrund (gennemsigtige PNG'er får hvid i stedet for sort).</li>
+                <li>Resultatet gemmes som JPG med 95% kvalitet.</li>
+                <li>Den midlertidige fil ryddes op.</li>
+            </ol>
+            <p style="margin-top: 0.75rem;">
+                Programmet bruger udelukkende komponenter der allerede findes i Windows.
+                Der installeres intet, og ingen data sendes over internettet.
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- FAQ -->
+    <div class="section-inner" id="faq">
+        <p class="section-label">Spørgsmål</p>
+        <h2 class="section-title">Ofte stillede spørgsmål</h2>
+
+        <div class="faq-item">
+            <h3>Sletter programmet mine originale billeder?</h3>
+            <p>Nej. Alle originale filer bevares. Der oprettes nye .jpg-filer ved siden af.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Hvad sker der hvis en .jpg allerede findes?</h3>
+            <p>Filen springes over, så du ikke overskriver eksisterende JPG-filer.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Kan jeg bruge det på flere mapper?</h3>
+            <p>Ja, kopier bare .bat-filen til en ny mappe og dobbeltklik igen.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Windows advarer om at filen kan være farlig?</h3>
+            <p>Da filen er downloadet fra internettet, kan Windows SmartScreen vise en advarsel. Klik "Flere oplysninger" og derefter "Kør alligevel". Programmet er et simpelt script du selv kan åbne og læse i Notepad.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Hvad med animerede GIF'er?</h3>
+            <p>Kun det første billede i animationen konverteres til JPG.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Hvilken kvalitet gemmes billederne i?</h3>
+            <p>JPG-kvaliteten er sat til 95%, hvilket giver en god balance mellem filstørrelse og billedkvalitet.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>NemJPG &middot; Gratis &middot; Ingen installation &middot; <a href="/">Michael Skov Hejmadi</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privatlivspolitik – AS-drive</title>
+    <meta name="description" content="Privatlivspolitik for AS-drive. Appen indsamler minimale data og sletter billeder automatisk efter upload.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/ASdrive/privacy.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privatlivspolitik – AS-drive">
+    <meta property="og:description" content="Privatlivspolitik for AS-drive. Appen indsamler minimale data og sletter billeder efter upload.">
+    <meta property="og:image" content="https://hejmadi.com/images/og-image.jpg">
+    <meta property="og:url" content="https://hejmadi.com/ASdrive/privacy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="da_DK">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Privatlivspolitik – AS-drive">
+    <meta name="twitter:description" content="Privatlivspolitik for AS-drive. Minimale data, automatisk sletning.">
+    <meta name="twitter:image" content="https://hejmadi.com/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FDFBF7;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #194EDD;
+            --color-border: rgba(26, 26, 26, 0.1);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7; font-size: 17px;
+        }
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border); padding: 1rem 2rem;
+        }
+        .nav-inner { max-width: 800px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo {
+            font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+            color: var(--color-text); text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+        }
+        .nav-logo:hover { color: var(--color-accent); }
+        .container {
+            max-width: 800px; margin: 0 auto;
+            padding: 7rem 2rem 4rem;
+        }
+        .card {
+            background: white; padding: 3rem; border-radius: 16px;
+            border: 1px solid var(--color-border);
+        }
+        h1 {
+            font-family: var(--font-display); font-size: 2rem; font-weight: 400;
+            margin-bottom: 0.3rem;
+        }
+        .updated { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+        h2 {
+            font-family: var(--font-display); font-size: 1.25rem; font-weight: 500;
+            color: var(--color-accent); margin: 2rem 0 0.75rem;
+        }
+        p, li { margin-bottom: 0.8rem; color: var(--color-text-muted); }
+        ul { padding-left: 1.5rem; }
+        a { color: var(--color-accent); }
+        footer {
+            text-align: center; padding: 2rem;
+            color: var(--color-text-muted); font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/ASdrive/" class="nav-logo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity: 0.6;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                AS-drive
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Privatlivspolitik</h1>
+            <p class="updated">Sidst opdateret: marts 2026</p>
+
+            <h2>Introduktion</h2>
+            <p>AS-drive ("appen") er en enterprise-applikation til billedoptagelse og upload til SharePoint. Denne politik beskriver, hvordan vi behandler data.</p>
+
+            <h2>Dataindsamling</h2>
+            <p>Appen indsamler og behandler følgende data:</p>
+            <ul>
+                <li><strong>Billeder:</strong> Fotos taget med appens kamera gemmes midlertidigt på enheden og uploades til jeres virksomheds SharePoint. Billeder gemmes IKKE i telefonens fotobibliotek.</li>
+                <li><strong>ID-numre:</strong> Numeriske identifikatorer som brugeren indtaster for at organisere billeder i mapper.</li>
+                <li><strong>Microsoft-konto:</strong> Appens login-oplysninger håndteres af Microsoft Authentication Library (MSAL). Vi gemmer ikke adgangskoder.</li>
+                <li><strong>Konfiguration:</strong> TenantID, ClientID, SiteID og DriveID gemmes lokalt på enheden.</li>
+            </ul>
+
+            <h2>Datahåndtering</h2>
+            <ul>
+                <li>Billeder krypteres med iOS' hardware-baserede kryptering (Complete File Protection) mens enheden er låst.</li>
+                <li>Billeder slettes automatisk fra enheden umiddelbart efter succesfuld upload (Zero-Persistence).</li>
+                <li>Ingen data sendes til tredjeparter. Al kommunikation foregår mellem enheden og jeres virksomheds Microsoft 365/SharePoint-miljø.</li>
+                <li>Appen bruger udelukkende Microsoft Graph API til dataoverførsel.</li>
+            </ul>
+
+            <h2>Tredjepartstjenester</h2>
+            <p>Appen bruger følgende tredjepartstjenester:</p>
+            <ul>
+                <li><strong>Microsoft Authentication Library (MSAL):</strong> Til sikker login med Microsoft-konto. Se <a href="https://privacy.microsoft.com/" target="_blank">Microsofts privatlivspolitik</a>.</li>
+                <li><strong>Microsoft Graph API:</strong> Til upload af filer til SharePoint.</li>
+            </ul>
+
+            <h2>Datalagring</h2>
+            <p>Appen gemmer ingen permanente brugerdata. Konfigurationsdata (ikke følsomme) gemmes i UserDefaults på enheden. MSAL tokens gemmes sikkert i iOS Keychain.</p>
+
+            <h2>Brugerrettigheder</h2>
+            <p>Du kan til enhver tid:</p>
+            <ul>
+                <li>Logge ud af din Microsoft-konto i appen</li>
+                <li>Slette appen og al tilknyttet data fra enheden</li>
+                <li>Kontakte din IT-administrator for at tilbagekalde app-adgang</li>
+            </ul>
+
+            <h2>Kontakt</h2>
+            <p>Spørgsmål vedrørende denne privatlivspolitik kan rettes til <a href="mailto:michael@hejmadi.com">michael@hejmadi.com</a> eller via vores <a href="support.html">supportside</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AS-drive &middot; <a href="/" style="color: inherit;">Michael Skov Hejmadi</a></p>
+    </footer>
+</body>
+</html>

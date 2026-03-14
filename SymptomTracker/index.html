@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptomTracker — Vejledning, Privatlivspolitik & Support</title>
+    <meta name="description" content="SymptomTracker til iPhone — komplet vejledning til symptomregistrering, eksport, streak-system og mere. Trygt og privat, direkte på din enhed.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/SymptomTracker/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SymptomTracker — Hold styr på dine symptomer">
+    <meta property="og:description" content="iPhone-app til symptomregistrering. Trygt og privat, direkte på din enhed. Ingen dataindsamling.">
+    <meta property="og:image" content="https://hejmadi.com/images/og-image.jpg">
+    <meta property="og:url" content="https://hejmadi.com/SymptomTracker/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SymptomTracker — Hold styr på dine symptomer">
+    <meta name="twitter:description" content="iPhone-app til symptomregistrering. Trygt og privat, direkte på din enhed.">
+    <meta name="twitter:image" content="https://hejmadi.com/images/og-image.jpg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SymptomTracker",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS 17.0+",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DKK" },
+      "description": "Hold styr på dine symptomer og få indsigt i din kroniske sygdom. Trygt og privat, direkte på din enhed.",
+      "author": { "@type": "Person", "@id": "https://hejmadi.com/#person", "name": "Michael Skov Hejmadi" }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #0058b0;
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --border: #d2d2d7;
+            --accent-bg: #e8f4fd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .back-bar {
+            background: #2D5A4A;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 101;
+        }
+
+        .back-bar .container {
+            display: block;
+        }
+
+        .back-bar a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .back-bar a:hover {
+            color: #fff;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 37px;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), #34aadc);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .container-wide {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0 2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 20px;
+            margin: 0 auto 2rem;
+            display: block;
+            box-shadow: 0 8px 30px rgba(0, 113, 227, 0.12);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Screenshots carousel */
+        .screenshots-section {
+            padding: 2rem 0 3rem;
+            overflow: hidden;
+        }
+
+        .screenshots-section h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .screenshots-section .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 2rem;
+        }
+
+        .screenshots-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.5rem 0 1.5rem;
+            scrollbar-width: none;
+        }
+
+        .screenshots-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .screenshot-card {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            text-align: center;
+        }
+
+        .screenshot-card:first-child {
+            margin-left: auto;
+        }
+
+        .screenshot-card:last-child {
+            margin-right: auto;
+        }
+
+        .screenshot-card img {
+            width: 200px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-card img:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-card .caption {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Card styles */
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: calc(100% + 5rem);
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+            display: block;
+            max-height: 280px;
+            object-fit: cover;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            font-size: 0.975rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight-box {
+            background: var(--accent-bg);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .highlight-box .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .highlight-box p {
+            color: var(--text);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .contact-item .icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .contact-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-item .value {
+            font-size: 0.975rem;
+            color: var(--text);
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #e8f8ec;
+            color: #1a7a2e;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        /* Guide styles */
+        .guide-step {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .guide-step .step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.1rem;
+        }
+
+        .guide-step .step-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .guide-step .step-content p {
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+        }
+
+        .feature-item .emoji {
+            font-size: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-item h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .condition-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .condition-tag {
+            background: var(--accent-bg);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .guide-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                border-radius: 14px;
+            }
+
+            .card {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .card-image {
+                width: calc(100% + 3rem);
+                margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+                max-height: 200px;
+            }
+
+            .screenshot-card img {
+                width: 160px;
+                border-radius: 16px;
+            }
+
+            .screenshots-scroll {
+                gap: 1rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .screenshot-card:first-child {
+                margin-left: 0;
+            }
+
+            .screenshot-card:last-child {
+                margin-right: 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header .container {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+            }
+
+            nav a:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="back-bar">
+    <div class="container">
+        <a href="/index.html">&larr; Hejmadi.com</a>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <a href="#" class="logo">
+            <div class="logo-icon">&#9829;</div>
+            <span class="logo-text">SymptomTracker</span>
+        </a>
+        <nav>
+            <a href="#screenshots">App</a>
+            <a href="#guide">Vejledning</a>
+            <a href="#gdpr">GDPR</a>
+            <a href="#privacy">Privatlivspolitik</a>
+            <a href="#support">Support</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section class="hero">
+            <img src="images/hero.png" alt="SymptomTracker — Hold styr på dine symptomer" class="hero-image">
+            <h1>SymptomTracker</h1>
+            <p>Hold styr på dine symptomer og få indsigt i din kroniske sygdom — trygt og privat, direkte på din enhed.</p>
+        </section>
+    </div>
+
+    <!-- App Screenshots -->
+    <section id="screenshots" class="screenshots-section">
+        <div class="container">
+            <h2>Se appen i aktion</h2>
+            <p class="subtitle">Enkel symptomregistrering, historik, eksport og meget mere.</p>
+        </div>
+        <div class="container-wide">
+            <div class="screenshots-scroll">
+                <div class="screenshot-card">
+                    <img src="images/screenshot-hjem.png" alt="Forsiden — dagens overblik">
+                    <div class="caption">I dag</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/screenshot-checkin.png" alt="Symptom check-in med sværhedsgrad">
+                    <div class="caption">Check-in</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/screenshot-historik.png" alt="Historik med kalender og graf">
+                    <div class="caption">Historik</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/screenshot-eksport.png" alt="Eksportér rapport via Mail eller SMS">
+                    <div class="caption">Eksport</div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="images/screenshot-indstillinger.png" alt="Indstillinger med Apple Health">
+                    <div class="caption">Indstillinger</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- User Guide -->
+        <section id="guide">
+            <div class="card">
+                <h2>Komplet vejledning</h2>
+                <p>Denne guide dækker alle funktioner i SymptomTracker, så du hurtigt kan komme i gang med at registrere og følge dine symptomer.</p>
+
+                <hr class="guide-divider">
+
+                <h3>Kom godt i gang</h3>
+                <div class="guide-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Download og åbn appen</h4>
+                        <p>Hent SymptomTracker gratis fra App Store. Når du åbner appen første gang, mødes du af en introduktion.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Vælg dine tilstande</h4>
+                        <p>Vælg en eller flere af de 11 forudkonfigurerede tilstande, der passer til din situation. Du kan altid tilføje eller fjerne tilstande senere i indstillinger.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Tilpas dine symptomer</h4>
+                        <p>Hver tilstand har forudvalgte symptomer. I simpel tilstand vises kun 3 kernesymptomer. I avanceret tilstand ser du alle tilgængelige symptomer, organiseret i kategorier.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Indstil daglig påmindelse</h4>
+                        <p>Vælg et tidspunkt for din daglige påmindelse. Du modtager en notifikation med mulighed for at registrere direkte, snooze 30 minutter eller springe over.</p>
+                    </div>
+                </div>
+
+                <hr class="guide-divider">
+
+                <h3>Understøttede tilstande</h3>
+                <p>Appen inkluderer 11 forudkonfigurerede tilstande med relevante symptomkategorier:</p>
+                <div class="condition-tags">
+                    <span class="condition-tag">Behçets sygdom</span>
+                    <span class="condition-tag">Hovedpine / Migræne</span>
+                    <span class="condition-tag">IBS (irritabel tarm)</span>
+                    <span class="condition-tag">Astma</span>
+                    <span class="condition-tag">Kroniske smerter</span>
+                    <span class="condition-tag">Angst/Panik</span>
+                    <span class="condition-tag">Depression</span>
+                    <span class="condition-tag">KOL</span>
+                    <span class="condition-tag">Søvnproblemer</span>
+                    <span class="condition-tag">Allergi</span>
+                    <span class="condition-tag">Epilepsi</span>
+                </div>
+                <p>Hver tilstand har 2-7 symptomkategorier med 3-18 individuelle symptomer. Du kan også oprette egne symptomer.</p>
+
+                <hr class="guide-divider">
+
+                <h3>Daglig registrering (I dag)</h3>
+                <p>Forsiden viser dine aktive tilstande med dagens status. For hver tilstand vælger du:</p>
+                <ul>
+                    <li><strong>Ja, symptomer</strong> — åbner check-in-flowet, hvor du angiver sværhedsgrad (0-3) for hvert symptom</li>
+                    <li><strong>Nej, ingen symptomer</strong> — registrerer en symptomfri dag med ét tryk</li>
+                    <li><strong>Ikke nu</strong> — springer registreringen over for nu</li>
+                    <li><strong>Samme som i går</strong> — kopierer gårsdagens registrering, hvis du har det uændret</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <span class="icon">&#128293;</span>
+                    <p><strong>Streak-system:</strong> Hold din streak i gang ved at registrere dagligt. En bjørne-maskot reagerer på din streak — og du må gerne springe én dag over uden at miste den.</p>
+                </div>
+
+                <h3>Simpel vs. avanceret tilstand</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="emoji">&#9997;</div>
+                        <h4>Simpel tilstand (standard)</h4>
+                        <p>Viser kun 3 kernesymptomer pr. tilstand med store knapper. Ideel til hurtig daglig registrering. Ca. 30 sekunder.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128200;</div>
+                        <h4>Avanceret tilstand</h4>
+                        <p>Alle symptomer, kategorier, triggertags, medicin, kropsdiagram, fotoregistrering og noter. Slås til i indstillinger.</p>
+                    </div>
+                </div>
+
+                <hr class="guide-divider">
+
+                <h3>Check-in detaljer (avanceret tilstand)</h3>
+                <p>Når du vælger "Ja, symptomer" i avanceret tilstand, kan du registrere:</p>
+                <ul>
+                    <li><strong>Sværhedsgrad</strong> pr. symptom: 0 (ingen), 1 (mild), 2 (moderat), 3 (svær)</li>
+                    <li><strong>Medicin:</strong> Navn, dosis og effekt (ingen/nogen/god)</li>
+                    <li><strong>Triggertags:</strong> Stress, vejr, træthed, søvn, kost, aktivitet, menstruation m.fl.</li>
+                    <li><strong>Kropsdiagram:</strong> Marker smerteområder på en interaktiv kropsfigur</li>
+                    <li><strong>Fotoregistrering:</strong> Tag op til 3 billeder (fx hudforandringer)</li>
+                    <li><strong>Noter:</strong> Fritekst-observationer til yderligere kontekst</li>
+                </ul>
+
+                <hr class="guide-divider">
+
+                <h3>Historik</h3>
+                <p>Historik-fanen viser dine registreringer i en kalender med farvekodede dage:</p>
+                <ul>
+                    <li><strong>Grøn</strong> — symptomer registreret</li>
+                    <li><strong>Orange</strong> — ingen symptomer</li>
+                    <li><strong>Grå</strong> — ikke registreret</li>
+                </ul>
+                <p>Tryk på en dato for at se alle detaljer: symptomer, sværhedsgrad, medicin, triggere, noter, vejrdata og sundhedsdata.</p>
+
+                <hr class="guide-divider">
+
+                <h3>7-dages diagram</h3>
+                <p>Nederst på forsiden vises et søjlediagram med de seneste 7 dages symptomdata. Hvis du har flere tilstande, vises de med forskellige farver, så du kan sammenligne forløbene.</p>
+
+                <hr class="guide-divider">
+
+                <h3>Mønstre og indsigt</h3>
+                <p>Mønster-fanen analyserer dine data (kræver mindst 14 dages registreringer) og viser:</p>
+                <ul>
+                    <li><strong>Trigger-mønstre:</strong> Hvilke triggere (stress, vejr, søvn osv.) korrelerer med dine symptomer</li>
+                    <li><strong>Vejrmønstre:</strong> Sammenhæng mellem temperatur, luftfugtighed og symptomer</li>
+                    <li><strong>Medicineffekt:</strong> Hvor ofte du tager medicin, og hvor effektiv den er</li>
+                    <li><strong>Symptom-mønstre:</strong> Hvilke symptomer optræder sammen</li>
+                </ul>
+
+                <hr class="guide-divider">
+
+                <h3>Eksport og rapporter</h3>
+                <p>Del dine data med din læge via eksport-fanen:</p>
+                <div class="guide-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Send rapport via Mail (standard)</h4>
+                        <p>Én-trykks-eksport: Vælg tidsperiode, og send en professionel PDF-rapport direkte via Mail.</p>
+                    </div>
+                </div>
+                <div class="guide-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Avancerede eksportmuligheder</h4>
+                        <p>Under "Flere muligheder" finder du CSV-eksport, udvidet PDF med daglige detaljer, konsultationsrapport, SMS-afsendelse og delingsark.</p>
+                    </div>
+                </div>
+                <p>Rapporterne indeholder oversigt over symptomfrekvens, sværhedsfordeling, medicinforbrug, triggere, sundhedsdata og noter.</p>
+
+                <hr class="guide-divider">
+
+                <h3>Indstillinger</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="emoji">&#128100;</div>
+                        <h4>Profil</h4>
+                        <p>Angiv dit navn, som vises i hilsenen og på rapporter.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128137;</div>
+                        <h4>Mine tilstande</h4>
+                        <p>Tilføj, fjern eller rediger dine aktive tilstande og symptomer.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#9881;</div>
+                        <h4>Visning</h4>
+                        <p>Vælg simpel/avanceret tilstand, sværhedsfarveskema og kategorifilter.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#129505;</div>
+                        <h4>Sundhedsdata</h4>
+                        <p>Aktiver Apple Health (skridt, søvn, puls, HRV, SpO2) og vejrdata.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128274;</div>
+                        <h4>Sikkerhed</h4>
+                        <p>Aktiver Face ID / Touch ID for at beskytte dine data.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128276;</div>
+                        <h4>Påmindelser</h4>
+                        <p>Indstil daglig påmindelse med valgfrit tidspunkt og ugentlig opsummering.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128190;</div>
+                        <h4>Backup</h4>
+                        <p>Eksportér og importér en komplet backup af dine data i JSON-format.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128202;</div>
+                        <h4>Demodata</h4>
+                        <p>Indlæs 90 dages realistisk testdata for at prøve alle funktioner.</p>
+                    </div>
+                </div>
+
+                <hr class="guide-divider">
+
+                <h3>Widget</h3>
+                <p>Tilføj SymptomTracker-widgeten til din hjemmeskærm for hurtigt overblik:</p>
+                <ul>
+                    <li>Se om du har registreret i dag (grøn/orange status)</li>
+                    <li>Din aktuelle streak med flamme-ikon</li>
+                    <li>Tryk for at åbne appen direkte</li>
+                </ul>
+
+                <hr class="guide-divider">
+
+                <h3>Tips til bedst mulig brug</h3>
+                <div class="highlight-box">
+                    <span class="icon">&#128161;</span>
+                    <p>Registrér hver dag — selv på symptomfri dage. Det giver din læge et komplet billede og styrker dine mønsteranalyser.</p>
+                </div>
+                <ul>
+                    <li>Start med simpel tilstand og skift til avanceret, når du er klar</li>
+                    <li>Brug "Samme som i går" på dage uden ændringer</li>
+                    <li>Aktiver Apple Health for at se sammenhæng mellem aktivitet og symptomer</li>
+                    <li>Eksportér en rapport inden dit næste lægebesøg</li>
+                    <li>Hold din streak i gang — det motiverer daglig registrering</li>
+                </ul>
+
+                <div class="date">Vejledning opdateret: 13. marts 2026 — Version 1.8</div>
+            </div>
+        </section>
+
+        <!-- GDPR & Dataansvar -->
+        <section id="gdpr">
+            <div class="card">
+                <div class="badge">&#9989; GDPR-overensstemmelse</div>
+                <h2>GDPR og dit dataansvar</h2>
+
+                <p>SymptomTracker er designet med databeskyttelse som grundprincip (privacy by design). Herunder forklarer vi, hvordan dine data håndteres — og hvad dit ansvar er som bruger.</p>
+
+                <div class="highlight-box">
+                    <span class="icon">&#128274;</span>
+                    <p><strong>Alle data forbliver på din enhed.</strong> SymptomTracker sender aldrig data automatisk. Ingen data forlader din telefon, medmindre du selv aktivt vælger at eksportere eller dele dem.</p>
+                </div>
+
+                <h3>Du er dataansvarlig</h3>
+                <p>Som bruger af SymptomTracker er du selv dataansvarlig for dine personlige helbredsoplysninger i henhold til GDPR (EU's databeskyttelsesforordning). Det betyder:</p>
+                <ul>
+                    <li><strong>Du bestemmer:</strong> Du beslutter selv, hvornår og med hvem dine data deles</li>
+                    <li><strong>Du handler:</strong> Appen sender aldrig noget automatisk — al eksport og deling kræver din aktive handling</li>
+                    <li><strong>Du kontrollerer:</strong> Du kan til enhver tid slette dine data ved at slette appen eller enkelte registreringer</li>
+                </ul>
+
+                <h3>Hvad er helbredsoplysninger?</h3>
+                <p>Under GDPR er helbredsoplysninger klassificeret som "særlige kategorier af personoplysninger" (artikel 9), der kræver ekstra beskyttelse. Dine symptomregistreringer, medicinbrug og sundhedsdata falder ind under denne kategori.</p>
+
+                <h3>Når du eksporterer data</h3>
+                <p>Når du sender en rapport via mail, SMS eller delingsark, forlader dine helbredsoplysninger enheden. Vær opmærksom på følgende:</p>
+                <ul>
+                    <li><strong>E-mail er ikke krypteret:</strong> Almindelig e-mail er ikke end-to-end-krypteret. Del kun rapporter med personer, du har tillid til (fx din læge)</li>
+                    <li><strong>Kodeordsbeskyttelse:</strong> Appen tilbyder kodeordsbeskyttede PDF-rapporter. Brug denne funktion og send kodeordet via en separat kanal (fx SMS)</li>
+                    <li><strong>Sikkert alternativ:</strong> Overvej at bruge AirDrop i konsultationen eller vise rapporten direkte fra telefonen</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <span class="icon">&#128161;</span>
+                    <p><strong>Anbefaling:</strong> Brug altid kodeordsbeskyttet PDF, når du sender rapporter via e-mail. Send koden via SMS til modtageren.</p>
+                </div>
+
+                <h3>Dataopbevaring</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="emoji">&#128241;</div>
+                        <h4>Kun lokal lagring</h4>
+                        <p>Data gemmes udelukkende på din enhed via Apples SwiftData. Ingen cloud, ingen servere.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128683;</div>
+                        <h4>Ingen tredjeparter</h4>
+                        <p>Ingen analyseværktøjer, reklamenetværk eller eksterne SDK'er. Ingen tracking overhovedet.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128272;</div>
+                        <h4>Biometrisk sikkerhed</h4>
+                        <p>Beskyt appen med Face ID eller Touch ID, så andre ikke kan åbne den.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="emoji">&#128465;</div>
+                        <h4>Ret til sletning</h4>
+                        <p>Slet appen, og alle data fjernes permanent. Ingen skjulte kopier.</p>
+                    </div>
+                </div>
+
+                <h3>Apple Health-data</h3>
+                <p>Hvis du aktiverer Apple Health-integration, læser appen sundhedsdata (skridt, søvn, puls mv.) via Apples HealthKit. Denne data:</p>
+                <ul>
+                    <li>Læses kun, når du åbner appen — aldrig i baggrunden</li>
+                    <li>Gemmes ikke permanent — den hentes frisk fra HealthKit</li>
+                    <li>Kan inkluderes i eksporterede rapporter, hvis du vælger det</li>
+                    <li>Deles aldrig med tredjeparter</li>
+                </ul>
+
+                <h3>Dine rettigheder under GDPR</h3>
+                <p>Da alle data er lokale på din enhed, har du fuld kontrol:</p>
+                <ul>
+                    <li><strong>Indsigtsret:</strong> Se alle dine data direkte i appen (historik, mønstre, eksport)</li>
+                    <li><strong>Ret til berigtigelse:</strong> Rediger tidligere registreringer når som helst</li>
+                    <li><strong>Ret til sletning:</strong> Slet individuelle registreringer eller hele appen</li>
+                    <li><strong>Ret til dataportabilitet:</strong> Eksportér alle data som CSV, PDF eller JSON-backup</li>
+                </ul>
+
+                <h3>Kontakt vedrørende databeskyttelse</h3>
+                <p>Har du spørgsmål om, hvordan SymptomTracker håndterer dine data, er du velkommen til at kontakte udvikleren:</p>
+                <p><strong>Michael Skov Hejmadi</strong> — <a href="mailto:hejmadi@gmail.com" style="color: var(--primary)">hejmadi@gmail.com</a></p>
+
+                <div class="date">GDPR-sektion opdateret: 14. marts 2026 — Version 1.8</div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy -->
+        <section id="privacy">
+            <div class="card">
+                <img src="images/privacy.png" alt="Privatliv og datasikkerhed" class="card-image">
+                <div class="badge">&#10003; Ingen dataindsamling</div>
+                <h2>Privatlivspolitik</h2>
+
+                <p>Hos SymptomTracker tager vi dit privatliv alvorligt. Denne politik beskriver, hvordan appen håndterer dine data.</p>
+
+                <div class="highlight-box">
+                    <span class="icon">&#128274;</span>
+                    <p>Alle dine data forbliver lokalt på din enhed. Vi indsamler, transmitterer eller deler ingen personlige oplysninger.</p>
+                </div>
+
+                <h3>Hvilke data gemmer appen?</h3>
+                <p>SymptomTracker gemmer følgende data lokalt på din enhed via Apples SwiftData:</p>
+                <ul>
+                    <li>Symptomregistreringer og daglige check-ins</li>
+                    <li>Tilstande/diagnoser du opretter</li>
+                    <li>Noter og kommentarer</li>
+                    <li>Brugernavn (valgfrit, kun til visning på rapporter)</li>
+                </ul>
+
+                <h3>Apple Health (HealthKit)</h3>
+                <p>Hvis du vælger at aktivere Apple Health-integration, kan appen <strong>læse</strong> følgende sundhedsdata:</p>
+                <ul>
+                    <li>Skridt (dagligt antal)</li>
+                    <li>Aktiv energi og bevægelsesminutter</li>
+                    <li>Stå-timer</li>
+                    <li>Søvnanalyse</li>
+                </ul>
+                <p>Disse data læses udelukkende for at vise dem sammen med dine symptomregistreringer. Data transmitteres aldrig fra din enhed og deles ikke med tredjeparter. Du kan til enhver tid deaktivere denne funktion i appens indstillinger.</p>
+
+                <h3>Tredjeparter</h3>
+                <p>SymptomTracker bruger ingen tredjepartsanalyseværktøjer, reklamenetværk, SDK'er eller eksterne tjenester. Appen indeholder ingen tracking.</p>
+
+                <h3>Eksport af data</h3>
+                <p>Du kan eksportere dine data som PDF- eller CSV-rapport via Mail eller SMS. Eksporten sker direkte fra din enhed, og vi har aldrig adgang til det eksporterede indhold.</p>
+
+                <h3>Børns privatliv</h3>
+                <p>SymptomTracker er ikke rettet mod børn under 13 år. Vi indsamler ikke bevidst data fra børn.</p>
+
+                <h3>Ændringer til denne politik</h3>
+                <p>Hvis vi opdaterer denne politik, vil ændringerne blive offentliggjort på denne side med en ny dato herunder.</p>
+
+                <div class="date">Senest opdateret: 2. marts 2026</div>
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section id="support">
+            <div class="card">
+                <img src="images/support.png" alt="Support og hjælp" class="card-image">
+                <h2>Support</h2>
+                <p>Har du spørgsmål, problemer eller forslag til SymptomTracker? Vi hjælper gerne!</p>
+
+                <h3>Ofte stillede spørgsmål</h3>
+
+                <h3>Hvordan registrerer jeg symptomer?</h3>
+                <p>Åbn appen og vælg en tilstand på forsiden. Tryk på "Ja, symptomer" og angiv sværhedsgrad (0-3) for hvert symptom. I simpel tilstand ser du kun 3 kernesymptomer; i avanceret tilstand kan du også tilføje medicin, triggere, kropsdiagram og noter.</p>
+
+                <h3>Hvad er forskellen på simpel og avanceret tilstand?</h3>
+                <p>Simpel tilstand (standard) viser kun 3 kernesymptomer pr. tilstand med store knapper — ideel til hurtig daglig registrering. Avanceret tilstand giver adgang til alle symptomer, kategorier, triggertags, medicin, kropsdiagram og fotoregistrering. Skift i Indstillinger under "Symptomtilstand".</p>
+
+                <h3>Hvordan fungerer streak-systemet?</h3>
+                <p>Din streak tæller antal sammenhængende dage med registreringer. Bjørne-maskotten reagerer på din streak. Du må gerne springe én dag over uden at miste din streak. Milepæle vises ved 7 dage, 14 dage, 30 dage og mere.</p>
+
+                <h3>Hvordan eksporterer jeg mine data?</h3>
+                <p>Gå til eksport-fanen og tryk "Send rapport via Mail" for at sende en professionel PDF-rapport. Under "Flere muligheder" finder du CSV-eksport, udvidede rapportformater og SMS-afsendelse. Vælg tidsperiode fra 7 dage til 6 måneder.</p>
+
+                <h3>Hvordan aktiverer jeg Apple Health?</h3>
+                <p>Gå til Indstillinger &gt; Sundhedsdata og slå Apple Health til. Appen læser skridt, søvn, puls, HRV, SpO2 og mere. Data vises sammen med dine registreringer og i eksporterede rapporter. Du kan deaktivere det igen når som helst.</p>
+
+                <h3>Kan jeg bruge appen på flere enheder?</h3>
+                <p>Data gemmes lokalt på din enhed. Du kan lave en backup (Indstillinger &gt; Backup) og overføre den til en anden enhed, men automatisk synkronisering er ikke tilgængelig.</p>
+
+                <h3>Hvordan beskytter jeg mine data?</h3>
+                <p>Aktiver Face ID eller Touch ID i Indstillinger &gt; Sikkerhed. Appen låser automatisk, når du forlader den.</p>
+
+                <h3>Tekniske krav</h3>
+                <ul>
+                    <li>iOS 17.0 eller nyere</li>
+                    <li>iPhone</li>
+                    <li>Ca. 15 MB lagerplads</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="card">
+                <h2>Kontakt</h2>
+                <p>Du er velkommen til at kontakte udvikleren direkte:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="icon">&#128100;</span>
+                        <div>
+                            <div class="label">Udvikler</div>
+                            <div class="value">Michael Skov Hejmadi</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">&#9993;</span>
+                        <div>
+                            <div class="label">E-mail</div>
+                            <div class="value"><a href="mailto:hejmadi@gmail.com">hejmadi@gmail.com</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">&#128222;</span>
+                        <div>
+                            <div class="label">Telefon</div>
+                            <div class="value"><a href="tel:+4528906889">+45 28 90 68 89</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">&#127968;</span>
+                        <div>
+                            <div class="label">Adresse</div>
+                            <div class="value">Torvegade 10 B, 7.<br>5000 Odense C<br>Danmark</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Michael Skov Hejmadi. Alle rettigheder forbeholdes.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/index.html">&larr; Hejmadi.com</a> &middot;
+            <a href="#privacy">Privatlivspolitik</a> &middot;
+            <a href="#support">Support</a> &middot;
+            <a href="#contact">Kontakt</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

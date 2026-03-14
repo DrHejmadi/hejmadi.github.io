@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Forside (dansk) -->
+  <url>
+    <loc>https://hejmadi.com/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/en/"/>
+  </url>
+
+  <!-- Forside (engelsk) -->
+  <url>
+    <loc>https://hejmadi.com/en/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/"/>
+  </url>
+
+  <!-- Dykkermedicin kursus -->
+  <url>
+    <loc>https://hejmadi.com/dykkermedicin-kursus.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Bog: Doktor Hansen har set sin sidste patient (DK) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/en.html"/>
+  </url>
+
+  <!-- Bog: Doktor Hansen har set sin sidste patient (EN) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/en.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/en.html"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/"/>
+  </url>
+
+  <!-- Bog: Doktor Hansens nye praksis (DK) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/doktor-hansens-nye-praksis/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html"/>
+  </url>
+
+  <!-- Bog: Doktor Hansens nye praksis (EN) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/en.html"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansens-nye-praksis/"/>
+  </url>
+
+  <!-- Bog: Anti-Age (DK) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/anti-age/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/anti-age/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/anti-age/en.html"/>
+  </url>
+
+  <!-- Bog: Anti-Age (EN) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/anti-age/en.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/anti-age/en.html"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/anti-age/"/>
+  </url>
+
+  <!-- Bøger på vej (DK) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/paa-vej/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/paa-vej/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/paa-vej/en.html"/>
+  </url>
+
+  <!-- Bøger på vej (EN) -->
+  <url>
+    <loc>https://hejmadi.com/boeger/paa-vej/en.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/paa-vej/en.html"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/paa-vej/"/>
+  </url>
+
+  <!-- AS-drive -->
+  <url>
+    <loc>https://hejmadi.com/ASdrive/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://hejmadi.com/ASdrive/privacy.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://hejmadi.com/ASdrive/support.html</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- Telefonvisitation -->
+  <url>
+    <loc>https://hejmadi.com/Telefonvisitation/</loc>
+    <lastmod>2026-03-13</lastmod>
+  </url>
+
+  <!-- BlomsterByLuddi -->
+  <url>
+    <loc>https://hejmadi.com/BlomsterByLuddi/</loc>
+    <lastmod>2026-03-13</lastmod>
+  </url>
+
+  <!-- NemJPG -->
+  <url>
+    <loc>https://hejmadi.com/NemJPG/</loc>
+    <lastmod>2026-03-08</lastmod>
+  </url>
+
+  <!-- SymptomTracker -->
+  <url>
+    <loc>https://hejmadi.com/SymptomTracker/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+  <!-- DemokratiDatabasen -->
+  <url>
+    <loc>https://hejmadi.com/DemokratiDatabasen/</loc>
+    <lastmod>2026-03-06</lastmod>
+  </url>
+
+</urlset>

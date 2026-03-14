@@ -1,0 +1,50 @@
+# robots.txt for hejmadi.com
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI search crawlers (tillad citat i AI-svar)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Bloker AI training crawlers (tillad søgning, men ikke træning)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Bloker SEO-scrapere
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Standard: tillad alt for øvrige bots
+User-agent: *
+Allow: /
+
+# Bloker backup-filer
+Disallow: /index_backup.html
+Disallow: /index_backup (2).html
+Disallow: /index (2).html
+Disallow: /dykkermedicin-kursus (2).html
+
+# Sitemap
+Sitemap: https://hejmadi.com/sitemap.xml

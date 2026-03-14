@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor Hansen har set sin sidste patient – Michael Skov Hejmadi</title>
+    <meta name="description" content="Den første bog i Doktor Hansen-serien. Et bud på hvordan fremtidens sundhedsvæsen vil se ud – med inspiration fra den folkekære Doktor Hansen fra Matador.">
+    <meta name="author" content="Michael Skov Hejmadi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/">
+    <link rel="alternate" hreflang="da" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/">
+    <link rel="alternate" hreflang="en" href="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/en.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Doktor Hansen har set sin sidste patient">
+    <meta property="og:description" content="Den første bog i Doktor Hansen-serien af Michael Skov Hejmadi og Andreas Pihl.">
+    <meta property="og:image" content="https://hejmadi.com/images/doktor-hansen-1.webp">
+    <meta property="og:url" content="https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/">
+    <meta property="og:type" content="book">
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:site_name" content="Michael Skov Hejmadi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Doktor Hansen har set sin sidste patient">
+    <meta name="twitter:image" content="https://hejmadi.com/images/doktor-hansen-1.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Doktor Hansen har set sin sidste patient",
+      "author": [{ "@id": "https://hejmadi.com/#person" }, { "@type": "Person", "name": "Andreas Pihl", "url": "https://www.andreaspihl.dk/" }],
+      "url": "https://hejmadi.com/boeger/doktor-hansen-har-set-sin-sidste-patient/",
+      "image": "https://hejmadi.com/images/doktor-hansen-1.webp",
+      "inLanguage": "da",
+      "datePublished": "2020",
+      "publisher": { "@type": "Organization", "name": "Grønningen 1" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FDFBF7;
+            --color-bg-alt: #F5F1E8;
+            --color-text: #1A1A1A;
+            --color-text-muted: #5A5A5A;
+            --color-accent: #2D5A4A;
+            --color-accent-light: #3D7A64;
+            --color-warm: #C4A77D;
+            --color-border: rgba(26, 26, 26, 0.1);
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            --max-width: 1200px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ── Back Bar ─────────────────────────────── */
+        .back-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity var(--transition);
+        }
+
+        .back-bar a:hover {
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        .lang-switcher span,
+        .lang-switcher a {
+            text-decoration: none;
+            transition: opacity var(--transition);
+        }
+
+        .lang-switcher .lang-active {
+            opacity: 1;
+            cursor: default;
+        }
+
+        .lang-switcher .lang-inactive {
+            opacity: 0.45;
+        }
+
+        .lang-switcher .lang-inactive:hover {
+            opacity: 0.7;
+        }
+
+        .lang-divider {
+            opacity: 0.4;
+            font-size: 0.85rem;
+            user-select: none;
+        }
+
+        /* ── Hero Section ─────────────────────────── */
+        .book-hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 2rem 3rem;
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .book-cover {
+            background: linear-gradient(135deg, #2D5A4A 0%, #3D7A64 100%);
+            aspect-ratio: 2 / 3;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 2rem;
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.12),
+                0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .book-cover-title {
+            font-family: var(--font-display);
+            color: #fff;
+            font-size: 1.65rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.35;
+            letter-spacing: -0.01em;
+        }
+
+        .book-cover-authors {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 1.25rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .book-cover-year {
+            color: rgba(255, 255, 255, 0.45);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* ── Book Info ─────────────────────────────── */
+        .book-info {
+            padding-top: 0.5rem;
+        }
+
+        .book-title {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .book-authors {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+            margin-bottom: 1.25rem;
+        }
+
+        .book-publisher-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            margin-bottom: 1.75rem;
+        }
+
+        .book-publisher-badge .dot {
+            width: 3px;
+            height: 3px;
+            background: var(--color-warm);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .book-description {
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 580px;
+        }
+
+        /* ── Buy Buttons ──────────────────────────── */
+        .buy-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .buy-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-accent);
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.92rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            transition: all var(--transition);
+            min-width: 120px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .buy-btn:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(45, 90, 74, 0.25);
+        }
+
+        .buy-btn-format {
+            font-size: 0.92rem;
+        }
+
+        .buy-btn-detail {
+            font-size: 0.72rem;
+            font-weight: 300;
+            opacity: 0.8;
+            margin-top: 0.1rem;
+        }
+
+        /* ── Reviews Section ──────────────────────── */
+        .reviews-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 2rem 4rem;
+        }
+
+        .reviews-heading {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .review-card {
+            background: var(--color-bg-alt);
+            border-left: 3px solid var(--color-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem 1.75rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateX(3px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .review-quote {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .review-quote::before {
+            content: '\201C';
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            line-height: 0;
+            vertical-align: -0.3em;
+            margin-right: 0.15rem;
+            font-style: normal;
+        }
+
+        .review-quote::after {
+            content: '\201D';
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            line-height: 0;
+            vertical-align: -0.3em;
+            margin-left: 0.1rem;
+            font-style: normal;
+        }
+
+        .review-source {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .review-source a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+
+        .review-source a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* ── Footer ───────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            font-weight: 400;
+        }
+
+        /* ── Responsive ───────────────────────────── */
+        @media (max-width: 768px) {
+            .back-bar {
+                padding: 0.65rem 1.25rem;
+            }
+
+            .book-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2.5rem 1.25rem 2rem;
+            }
+
+            .book-cover {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
+            .book-title {
+                font-size: 1.75rem;
+            }
+
+            .book-description {
+                font-size: 1rem;
+            }
+
+            .buy-buttons {
+                flex-direction: column;
+            }
+
+            .buy-btn {
+                width: 100%;
+            }
+
+            .reviews-section {
+                padding: 1.5rem 1.25rem 3rem;
+            }
+
+            .reviews-heading {
+                font-size: 1.35rem;
+            }
+
+            .review-card {
+                padding: 1.25rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Bar -->
+    <nav class="back-bar">
+        <a href="/" class="back-link">&larr; Hejmadi.com</a>
+        <div class="lang-switcher">
+            <span class="lang-active" title="Dansk">&#x1F1E9;&#x1F1F0;</span>
+            <span class="lang-divider">/</span>
+            <a href="en.html" class="lang-inactive" title="English">&#x1F1EC;&#x1F1E7;</a>
+        </div>
+    </nav>
+
+    <!-- Book Hero -->
+    <section class="book-hero">
+        <a href="https://www.saxo.com/dk/doktor-hansen-har-set-sin-sidste-patient_michael-hejmadi-pedersenandreas-pihlfrederik-lindhardt_haeftet_9788793825390" target="_blank" rel="noopener" title="Køb på Saxo.com" class="book-cover" style="background: none; display: block;">
+            <img src="/images/doktor-hansen-1.webp" alt="Doktor Hansen har set sin sidste patient" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; border-radius: 6px;">
+        </a>
+
+        <div class="book-info">
+            <h1 class="book-title">Doktor Hansen har set sin sidste patient</h1>
+            <p class="book-authors">Michael Hejmadi Pedersen, <a href="https://www.andreaspihl.dk/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(26,26,26,0.1); text-underline-offset: 2px;">Andreas Pihl</a> &amp; Frederik Lindhardt</p>
+            <div class="book-publisher-badge">
+                <span>Gr&oslash;nningen 1</span>
+                <span class="dot"></span>
+                <span>2020</span>
+            </div>
+            <p class="book-description">
+                Den f&oslash;rste bog i Doktor Hansen-serien. Et bud p&aring; hvordan fremtidens sundhedsv&aelig;sen vil se ud &ndash; med inspiration fra den folkek&aelig;re Doktor Hansen fra Matador. Bogen udforsker teknologiens rolle i almen praksis og fremtidens patientrolle.
+            </p>
+            <div class="buy-buttons">
+                <a href="https://www.saxo.com/dk/doktor-hansen-har-set-sin-sidste-patient_michael-hejmadi-pedersenandreas-pihlfrederik-lindhardt_haeftet_9788793825390" target="_blank" rel="noopener" class="buy-btn">
+                    <span class="buy-btn-format">H&aelig;ftet</span>
+                </a>
+                <a href="https://www.saxo.com/dk/doktor-hansen-har-set-sin-sidste-patient_epub_9788793825710" target="_blank" rel="noopener" class="buy-btn">
+                    <span class="buy-btn-format">E-bog</span>
+                </a>
+                <a href="https://www.saxo.com/dk/doktor-hansen-har-set-sin-sidste-patient_lydbog_9788793825680" target="_blank" rel="noopener" class="buy-btn">
+                    <span class="buy-btn-format">Lydbog</span>
+                    <span class="buy-btn-detail">Jesper Platz &middot; 331 min</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews-section">
+        <h2 class="reviews-heading">Anmeldelser &amp; omtale</h2>
+        <div class="reviews-grid">
+            <blockquote class="review-card">
+                <p class="review-quote">L&aelig;ger, politikere og embedsm&aelig;nd skal l&aelig;se ny bog, hvis de vil have perspektiver p&aring; mulighederne og problemerne ved teknologiudviklingen p&aring; sundhedsomr&aring;det.</p>
+                <cite class="review-source">Altinget</cite>
+            </blockquote>
+            <blockquote class="review-card">
+                <p class="review-quote">Alt i alt en interessant, letl&aelig;st og sympatisk bog med meget p&aring; hjerte.</p>
+                <cite class="review-source">Sybille Bojl&eacute;n, <a href="https://ugeskriftet.dk/nyhed/doktor-hansen-har-set-sin-sidste-patient" target="_blank" rel="noopener">Ugeskrift for L&aelig;ger</a></cite>
+            </blockquote>
+            <blockquote class="review-card">
+                <p class="review-quote">Giver et sp&aelig;ndende indblik i b&aring;de fremtidens patienter, livet i almen praksis og de mange nye teknologiske muligheder.</p>
+                <cite class="review-source">Danske Kommuner</cite>
+            </blockquote>
+            <blockquote class="review-card">
+                <p class="review-quote">En fin debatbog om teknologiens indtog i almen praksis.</p>
+                <cite class="review-source">Dagens Medicin</cite>
+            </blockquote>
+            <blockquote class="review-card">
+                <p class="review-quote">En velskrevet og interessant bog, som byder p&aring; kendskab til den danske sundhedssektor indefra.</p>
+                <cite class="review-source">Lektorudtalelse</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 Michael Skov Hejmadi
+    </footer>
+
+</body>
+</html>
