@@ -1,6 +1,32 @@
+# macOS
 .DS_Store
-*.zip
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude
+.claude/
+
+# Backups & duplicates
+*.bak
+*_backup*
 * (2).*
 *_(2).*
-*.bak
-.claude/
+
+# Archives
+*.zip
+
+# Python
+*.pyc
+__pycache__/
+
+# Misc
+Thumbs.db
+.env
