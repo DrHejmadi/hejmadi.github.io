@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS-drive – Enterprise billedupload til SharePoint</title>
-    <meta name="description" content="AS-drive er en iPhone-app til sikker billedoptagelse og upload direkte til SharePoint. Offline-klar, zero-persistence og enterprise-sikkerhed.">
+    <title>AS-drive – Sikker billedupload til OneDrive</title>
+    <meta name="description" content="AS-drive er en iPhone-app til sikker klinisk billedoptagelse og upload direkte til OneDrive. Offline-klar, zero-persistence, GDPR-compliant og klinisk kamera.">
     <meta name="author" content="Michael Skov Hejmadi">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://hejmadi.com/ASdrive/">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AS-drive – Enterprise billedupload til SharePoint">
-    <meta property="og:description" content="Tag billeder i felten. Upload direkte til SharePoint. Sikkert og automatisk.">
+    <meta property="og:title" content="AS-drive – Sikker billedupload til OneDrive">
+    <meta property="og:description" content="Tag billeder i felten. Upload direkte til OneDrive. Sikkert, automatisk og GDPR-compliant.">
     <meta property="og:image" content="https://hejmadi.com/images/asdrive-icon.png">
     <meta property="og:url" content="https://hejmadi.com/ASdrive/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="da_DK">
     <meta property="og:site_name" content="Michael Skov Hejmadi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AS-drive – Enterprise billedupload til SharePoint">
+    <meta name="twitter:title" content="AS-drive – Sikker billedupload til OneDrive">
     <meta name="twitter:image" content="https://hejmadi.com/images/asdrive-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@
             --color-accent-light: #3366E8;
             --color-warm: #C4A77D;
             --color-border: rgba(26, 26, 26, 0.1);
+            --color-success: #34C759;
             --font-display: 'Fraunces', Georgia, serif;
             --font-body: 'Source Sans 3', -apple-system, sans-serif;
             --max-width: 900px;
@@ -104,7 +105,16 @@
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 550px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
+        }
+        .hero .version-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
         }
         .hero-badge img {
             height: 50px;
@@ -125,6 +135,21 @@
             max-width: var(--max-width);
             margin: 0 auto;
         }
+        .section-dark {
+            background: #1A1A1A;
+            color: white;
+            padding: 4rem 2rem;
+        }
+        .section-dark .section-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .section-dark .section-label { color: var(--color-success); }
+        .section-dark .feature-card {
+            background: #2A2A2A;
+            border-color: rgba(255,255,255,0.1);
+        }
+        .section-dark .feature-card p { color: rgba(255,255,255,0.7); }
         .section-title {
             font-family: var(--font-display);
             font-size: 1.8rem;
@@ -149,6 +174,7 @@
         }
         @media (max-width: 640px) {
             .features-grid { grid-template-columns: 1fr; }
+            .screenshots-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         .feature-card {
             background: white;
@@ -180,6 +206,46 @@
             font-size: 0.95rem;
         }
 
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .screenshot-item {
+            text-align: center;
+        }
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            transition: transform var(--transition);
+        }
+        .screenshot-item img:hover {
+            transform: scale(1.03);
+        }
+        .screenshot-item p {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .new-badge {
+            display: inline-block;
+            background: var(--color-success);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 8px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .enterprise-box {
             text-align: center;
             max-width: 600px;
@@ -188,6 +254,40 @@
         .enterprise-box p {
             color: var(--color-text-muted);
             font-size: 1.05rem;
+        }
+
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            .how-it-works { grid-template-columns: 1fr; }
+        }
+        .step {
+            padding: 1.5rem;
+        }
+        .step-number {
+            width: 48px; height: 48px;
+            background: var(--color-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+        .step h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .step p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
         }
 
         .faq-list { max-width: 700px; margin: 0 auto; }
@@ -240,6 +340,7 @@
             </a>
             <div class="nav-links">
                 <a href="#funktioner">Funktioner</a>
+                <a href="#screenshots">Screenshots</a>
                 <a href="#faq">FAQ</a>
                 <a href="privacy.html">Privatliv</a>
                 <a href="support.html">Support</a>
@@ -251,75 +352,167 @@
         <div class="hero-inner">
             <img src="/images/asdrive-icon.png" alt="AS-drive app ikon" class="hero-icon">
             <h1>AS-drive</h1>
-            <p>Tag billeder i felten. Upload direkte til SharePoint. Sikkert og automatisk.</p>
+            <p>Tag billeder i felten. Upload direkte til OneDrive. Sikkert, automatisk og GDPR-compliant.</p>
+            <div class="version-badge">Version 1.2.0 &mdash; Klinisk kamera, Face ID og dark mode</div>
             <div class="hero-badge">
-                <a href="#" aria-label="Download on the App Store">
+                <a href="https://apps.apple.com/app/as-drive/id6760204952" aria-label="Download on the App Store">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
                 </a>
             </div>
         </div>
     </div>
 
-    <section class="section" id="funktioner">
-        <p class="section-label">Funktioner</p>
-        <h2 class="section-title">Bygget til felten</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                </div>
-                <h3>Sikker upload</h3>
-                <p>Billeder uploades direkte til jeres SharePoint via Microsoft Graph med krypteret forbindelse.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M10 20v-6h4v6"/><line x1="2" y1="20" x2="2" y2="20"/></svg>
-                </div>
-                <h3>Offline-klar</h3>
-                <p>Ingen forbindelse? Billeder gemmes lokalt og uploades automatisk, når nettet vender tilbage.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14H7L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V3h6v3"/></svg>
-                </div>
-                <h3>Zero-Persistence</h3>
-                <p>Billeder slettes fra telefonen straks efter succesfuld upload. Ingen data efterlades.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3>Enterprise-sikkerhed</h3>
-                <p>Hardware-kryptering, Microsoft Entra ID login, og Sites.Selected-tilladelser.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-alt">
-        <div class="section-inner">
-            <div class="enterprise-box">
-                <p class="section-label">Enterprise</p>
-                <h2 class="section-title">Til virksomheder</h2>
-                <p>AS-drive er designet til feltarbejdere der skal dokumentere med billeder. Appen kræver en Microsoft 365-konto og opsættes af jeres IT-administrator.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Hvordan det virker -->
     <section class="section">
-        <p class="section-label">Systemkrav</p>
-        <h2 class="section-title">Krav</h2>
+        <p class="section-label">S&aring;dan virker det</p>
+        <h2 class="section-title">Tre trin. Det er det hele.</h2>
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Scan QR-kode</h3>
+                <p>Scan din organisations QR-kode for at forbinde til OneDrive. Log ind med Microsoft.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Tag et billede</h3>
+                <p>Brug det kliniske kamera med HDR, makro-l&aring;s og klinisk belysning.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Automatisk upload</h3>
+                <p>Billedet uploades til OneDrive og slettes fra telefonen. Zero-persistence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funktioner -->
+    <section class="section-alt" id="funktioner">
+        <div class="section-inner">
+            <p class="section-label">Funktioner</p>
+            <h2 class="section-title">Bygget til klinisk brug</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h3>Sikker upload til OneDrive</h3>
+                    <p>Billeder uploades direkte til jeres OneDrive via Microsoft Graph med krypteret forbindelse og idempotentn&oslash;gler.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                    <h3>Klinisk kamera <span class="new-badge">Nyt</span></h3>
+                    <p>HDR-tilstand, makro-l&aring;s til n&aelig;rbilleder, klinisk belysning med l&aring;st hvidbalance, og EXIF GPS-fjernelse.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M10 20v-6h4v6"/></svg>
+                    </div>
+                    <h3>Offline-klar</h3>
+                    <p>Ingen forbindelse? Billeder gemmes lokalt med kryptering og uploades automatisk med eksponentiel backoff.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14H7L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V3h6v3"/></svg>
+                    </div>
+                    <h3>Zero-Persistence</h3>
+                    <p>Billeder slettes fra telefonen straks efter succesfuld upload. Ingen data efterlades p&aring; enheden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v4"/><circle cx="12" cy="16" r="1"/></svg>
+                    </div>
+                    <h3>Face ID / Touch ID <span class="new-badge">Nyt</span></h3>
+                    <p>Biometrisk l&aring;s beskytter appen mod uautoriseret adgang. Automatisk l&aring;s efter 30 min inaktivitet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>GDPR Audit Log <span class="new-badge">Nyt</span></h3>
+                    <p>Uforanderligt audit log registrerer login, uploads og handlinger for fuld sporbarhed og compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section-dark" id="screenshots">
+        <div class="section-inner">
+            <p class="section-label">Screenshots</p>
+            <h2 class="section-title" style="color: white;">Designet til &eacute;nh&aring;ndsbetjening</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="screenshots/01_kamera.png" alt="AS-drive kamera-visning" loading="lazy">
+                    <p>Kamera</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="screenshots/02_indstillinger.png" alt="AS-drive indstillinger" loading="lazy">
+                    <p>Indstillinger</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="screenshots/03_indstillinger_demo.png" alt="AS-drive demo-tilstand" loading="lazy">
+                    <p>Konfiguration</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="screenshots/04_uploads.png" alt="AS-drive uploads" loading="lazy">
+                    <p>Uploads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nyheder i v1.2.0 -->
+    <section class="section">
+        <p class="section-label">Nyt i version 1.2.0</p>
+        <h2 class="section-title">Klinisk kamera og sikkerhed</h2>
         <div class="faq-list">
             <div class="faq-item">
-                <h3>iPhone med iOS 16.0 eller nyere</h3>
-                <p>Appen kræver en moderne iPhone med kameradgang.</p>
+                <h3>Klinisk kamera</h3>
+                <p>HDR-tilstand, makro-l&aring;s til iPhone 13 Pro+, og klinisk belysning med l&aring;st hvidbalance (5500K) for konsistent farvegengivelse.</p>
             </div>
             <div class="faq-item">
-                <h3>Microsoft 365-konto</h3>
-                <p>Din virksomhed skal have Microsoft 365 med adgang til SharePoint.</p>
+                <h3>Face ID / Touch ID</h3>
+                <p>Biometrisk autentificering beskytter adgang til appen. Automatisk l&aring;s ved inaktivitet.</p>
             </div>
             <div class="faq-item">
-                <h3>IT-administrator opsætning</h3>
-                <p>En App Registration i Entra ID med Sites.Selected-tilladelser og admin consent.</p>
+                <h3>GDPR Audit Log</h3>
+                <p>Komplet logning af login, uploads og handlinger. Uforanderligt log for compliance og sporbarhed.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Forbedret upload</h3>
+                <p>Eksponentiel backoff retry, baggrunds-upload, idempotentn&oslash;gler mod dubletter, og haptic feedback ved f&aelig;rdig upload.</p>
+            </div>
+            <div class="faq-item">
+                <h3>EXIF GPS-fjernelse</h3>
+                <p>GPS-koordinater fjernes automatisk fra alle billeder f&oslash;r upload for at beskytte patienters privatliv.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Dark mode</h3>
+                <p>Klinisk farvetema med h&oslash;j kontrast, d&aelig;mpede farver og dark mode first-design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systemkrav -->
+    <section class="section-alt" id="faq">
+        <div class="section-inner">
+            <p class="section-label">Systemkrav</p>
+            <h2 class="section-title">Krav</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>iPhone med iOS 16.0 eller nyere</h3>
+                    <p>Appen kr&aelig;ver en moderne iPhone med kameradgang.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Microsoft-konto med OneDrive</h3>
+                    <p>Inkluderet i Microsoft 365 Family, Personal, Business eller Enterprise.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>QR-kode fra administrator</h3>
+                    <p>En App Registration i Entra ID konfigureres af IT-administrator og deles som QR-kode.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -331,7 +524,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 AS-drive &middot; <a href="/">Michael Skov Hejmadi</a></p>
+        <p>&copy; 2026 AS-drive &middot; <a href="/">Michael Skov Hejmadi</a> &middot; Version 1.2.0</p>
     </footer>
 </body>
 </html>
