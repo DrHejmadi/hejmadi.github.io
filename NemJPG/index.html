@@ -154,7 +154,7 @@
         <a href="https://apps.apple.com/app/nemjpg/id6760638406" class="dl-btn mac">
             <span class="icon">&#63743;</span> Download til macOS
         </a>
-        <a href="https://github.com/DrHejmadi/NemJPG/releases/latest/download/NemJPG-Windows-v1.0.zip" class="dl-btn win">
+        <a href="https://github.com/DrHejmadi/NemJPG/releases/latest/download/NemJPG-Windows-v1.1.zip" class="dl-btn win">
             <span class="icon">&#8862;</span> Download til Windows
         </a>
     </div>
@@ -227,25 +227,43 @@
         </div>
     </section>
 
-    <!-- How it works -->
+    <!-- How it works: Windows -->
     <section>
-        <h2>Saadan virker det</h2>
-        <p class="subtitle">Tre trin - det er det hele</p>
+        <h2>Saadan installerer du paa Windows</h2>
+        <p class="subtitle">Download, pak ud, installer - klar paa 30 sekunder</p>
 
         <div class="steps">
             <div class="step">
-                <h3>Download</h3>
-                <p>Hent NemJPG til din platform. macOS app eller Windows installer.</p>
+                <h3>Download ZIP</h3>
+                <p>Hent NemJPG-Windows-v1.1.zip fra knappen ovenfor eller fra <a href="https://github.com/DrHejmadi/NemJPG/releases" style="color: var(--blue);">GitHub Releases</a>.</p>
             </div>
             <div class="step">
-                <h3>Vaelg billeder</h3>
-                <p>Traek billeder ind (macOS) eller hoejreklik i Stifinder (Windows).</p>
+                <h3>Pak ud &amp; installer</h3>
+                <p>Pak zip-filen ud. Dobbeltklik paa <strong>Installer NemJPG.bat</strong>. Ingen admin-rettigheder paakraevet.</p>
             </div>
             <div class="step">
-                <h3>Faerdig!</h3>
-                <p>Konverterede billeder gemmes i en undermappe. Originaler beholdes.</p>
+                <h3>Hoejreklik &amp; konverter</h3>
+                <p>Hoejreklik paa et billede eller en mappe i Stifinder og vaelg format. Faerdig!</p>
             </div>
         </div>
+    </section>
+
+    <!-- Context menu -->
+    <section>
+        <h2>Hoejreklik-menuen</h2>
+        <p class="subtitle">Konverter direkte fra Stifinder - ingen programmer at aabne</p>
+
+        <div style="background: var(--card); border-radius: var(--radius); padding: 32px; border: 1px solid rgba(255,255,255,0.06); max-width: 480px; margin: 0 auto; font-family: 'Consolas', 'Courier New', monospace; font-size: 0.95em;">
+            <div style="color: var(--blue); font-weight: 700; margin-bottom: 12px;">NemJPG &rsaquo;</div>
+            <div style="padding-left: 24px; display: flex; flex-direction: column; gap: 8px;">
+                <div style="padding: 6px 12px; border-radius: 6px; background: rgba(59,130,246,0.1);">Konverter til JPG (Hoej kvalitet - 95%)</div>
+                <div style="padding: 6px 12px; border-radius: 6px; background: rgba(59,130,246,0.08);">Konverter til JPG (Web - 80%)</div>
+                <div style="padding: 6px 12px; border-radius: 6px; background: rgba(59,130,246,0.06);">Konverter til JPG + Resize (1920px)</div>
+                <div style="padding: 6px 12px; border-radius: 6px; background: rgba(59,130,246,0.04);">Konverter til PNG</div>
+                <div style="padding: 6px 12px; border-radius: 6px; background: rgba(59,130,246,0.02);">Konverter til WebP</div>
+            </div>
+        </div>
+        <p style="text-align: center; color: var(--muted); margin-top: 16px; font-size: 0.9em;">Konverterede billeder gemmes i en <strong>NemJPG_output</strong> undermappe. Originaler beholdes altid.</p>
     </section>
 
     <!-- System Requirements -->
@@ -303,6 +321,14 @@
         <details>
             <summary>Er NemJPG sikkert?</summary>
             <p>Ja. NemJPG sender ingen data over internettet. Al konvertering sker lokalt paa din maskine. Koden er open source.</p>
+        </details>
+        <details>
+            <summary>Hvordan afinstallerer jeg NemJPG paa Windows?</summary>
+            <p>Koer <strong>Afinstaller NemJPG.bat</strong> (inkluderet i zip-filen). Den fjerner alle filer og hoejreklik-menuen.</p>
+        </details>
+        <details>
+            <summary>Kraever Windows-versionen admin-rettigheder?</summary>
+            <p>Nej. Installationen bruger kun din bruger-profil (HKCU registry). Ingen admin-rettigheder paakraevet.</p>
         </details>
     </section>
 
